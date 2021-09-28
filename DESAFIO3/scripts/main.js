@@ -11,10 +11,10 @@ while (nombre != "ESC") {
         case "TAURO":
             alert(`¡Hola ${nombre}! Tus números de la suerte son: 1-14-26-27-33-35`);
             break;
-        case "GÉMINIS":
+        case "GEMINIS":
             alert(`¡Hola ${nombre}! Tus números de la suerte son: 14-22-30-31-42-44`);
             break;
-        case "CÁNCER":
+        case "CANCER":
             alert(`¡Hola ${nombre}! Tus números de la suerte son: 4-7-9-31-36-40`);
             break;
         case "LEO":
