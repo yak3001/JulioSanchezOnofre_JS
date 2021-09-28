@@ -4,6 +4,11 @@ let nombre = entrada.toUpperCase();
 let signo = zodiaco.toUpperCase();
 
 while (nombre != "ESC") {
+    switch (nombre) {
+        case "CARLOS":
+            alert("Pinche Farías, a ti ya te cargó la verga.");
+            break;
+    }
     switch (signo) {
         case "ARIES":
             alert(`¡Hola ${nombre}! Tus números de la suerte son: 1-11-15-21-26-47`);
@@ -46,11 +51,7 @@ while (nombre != "ESC") {
             alert("No ingresaste un signo válido.")
             break;
     }
-    switch (nombre) {
-        case "CARLOS":
-            alert("Pinche Farías, a ti ya te cargó la verga.");
-            break;
-    }
+    
     entrada = prompt("¿Quieres saber cuáles son tus números de la suerte?. Ingresa tu nombre (sin acentos)");
     zodiaco = prompt("Ingresa tu signo zodiacal");
     nombre = entrada.toUpperCase();
