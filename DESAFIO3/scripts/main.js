@@ -1,5 +1,5 @@
 let entrada = prompt("¿Quieres saber cuáles son tus números de la suerte? Ingresa tu nombre");
-let zodiaco = prompt("Ingresa tu signo zodiacal");
+let zodiaco = prompt("Ingresa tu signo zodiacal (sin acentos)");
 let nombre = entrada.toUpperCase();
 let signo = zodiaco.toUpperCase();
 
