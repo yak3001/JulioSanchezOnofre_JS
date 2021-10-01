@@ -5,7 +5,7 @@ function validez(comprobar) {
     comprobar = parseInt(listaNominal * 0.03);
     while (firmas != "ESC") {
         if (parseInt(firmas) >= comprobar) {
-            alert(`Con ${parseInt(firmas)} firmas sí se cumple el requisito mínimo de firmas requeridas para convocar el proceso de revocación de mandato. El mínimo requerido son ${listaNominal} firmas.`);
+            alert(`Con ${parseInt(firmas)} firmas sí se cumple el requisito mínimo de firmas requeridas para convocar el proceso de revocación de mandato. El mínimo requerido son ${comprobar} firmas.`);
             break;
         }
         else if (parseInt(firmas) < comprobar) {
