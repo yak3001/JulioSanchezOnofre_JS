@@ -34,7 +34,7 @@ function faltante(comprobar, diferencia) {
 }
 function participacion (votacion){
 votacion = parseInt(listaNominal * 0.4);
-alert (`Para que la votación en la jornada de revocación de mandato sea vinculante, deberán participar, al menos, ${votacion} ciudadanas y ciudadanos.`)
+alert (`Para que sean vinculantes los resultados de la votación en la jornada de revocación de mandato, deberán participar, al menos, ${votacion} ciudadanas y ciudadanos.`)
 }
 
 validez();
