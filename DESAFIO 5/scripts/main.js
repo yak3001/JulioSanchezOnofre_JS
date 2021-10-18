@@ -9,27 +9,18 @@ class ProcesoElectoral {
         this.listaNominal = listaNominal;
     }
 
+    
     participacion() {
-        return this.calcParticipacion();
-    }
-    calcParticipacion() {
         return ((this.votos / this.listaNominal) * 100).toFixed(2);
     }
 
     presupuestoElecciones() {
-        return this.calcPresupuestoElecciones();
-    }
-
-    calcPresupuestoElecciones() {
-        return this.presupuestoPrevio + this.presupuestoActual + this.presupuestoPartidos;
+            return this.presupuestoPrevio + this.presupuestoActual + this.presupuestoPartidos;
     }
 
     costoVoto() {
-        return this.calcCostoVoto();
-    }
-
-    calcCostoVoto() {
-        return (this.calcPresupuestoElecciones() / this.votos).toFixed(2);
+    
+        return (this.presupuestoElecciones() / this.votos).toFixed(2);
     }
 
 }
