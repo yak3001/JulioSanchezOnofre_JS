@@ -1,90 +1,103 @@
-const proceso2014 = 539799052;
-const proceso2015 = 4196776135;
-const partidos2015 = 5355522828;
-const proceso2017 = 699534390;
-const proceso2018 = 7144961645;
-const partidos2018 = 4138727092;
-const proceso2020 = 479250873;
-const proceso2021 = 7861864517;
-const partidos2021 = 7226003636;
+//CONSTRUCCION CLASE
 
-const votos2015 = 39864082;
-const votos2018 = 56611027;
-const votos2021 = 49151320;
-const listaNominal2015 = 83536377;
-const listaNominal2018 = 89250881;
-const listaNominal2021 = 93328771;
+class ProcesoElectoral {
+    constructor(presupuestoPrevio, presupuestoActual, presupuestoPartidos, votos, listaNominal) {
+        this.presupuestoPrevio = presupuestoPrevio;
+        this.presupuestoActual = presupuestoActual;
+        this.presupuestoPartidos = presupuestoPartidos;
+        this.votos = votos;
+        this.listaNominal = listaNominal;
+    }
 
-//FUNCIÓN PARA CALCULAR GASTO DE LAS ELECCIONES FEDERALES 2015
-function gasto2015 (presupuesto2015) {
-    presupuesto2015=(proceso2014+proceso2015+partidos2015);
-    return presupuesto2015;
-}
-//FUNCIÓN PARA CALCULAR GASTO DE LAS ELECCIONES FEDERALES 2018
-function gasto2018 (presupuesto2018) {
-    presupuesto2018=(proceso2017+proceso2018+partidos2018);
-    return presupuesto2018;
-}
-//FUNCIÓN PARA CALCULAR GASTO DE LAS ELECCIONES FEDERALES 2021
-function gasto2021 (presupuesto2021) {
-    presupuesto2021=(proceso2020+proceso2021+partidos2021);
-    return presupuesto2021;
-}
 
-//FUNCION PARA CALCULAR COSTO DE CADA VOTO EN 2015
-function costoVoto2015 (costoVoto2015) {
-costoVoto2015 = gasto2015() / votos2015;
-return costoVoto2015.toFixed(2); 
+    participacion() {
+        return ((this.votos / this.listaNominal) * 100).toFixed(2);
+    }
 
-}
-//FUNCION PARA CALCULAR COSTO DE CADA VOTO EN 2018
-function costoVoto2018 (costoVoto2018) {
-costoVoto2018 = gasto2018() / votos2018;
-return costoVoto2018.toFixed(2); 
+    presupuestoElecciones() {
+        return this.presupuestoPrevio + this.presupuestoActual + this.presupuestoPartidos;
+    }
 
-}
-//FUNCION PARA CALCULAR COSTO DE CADA VOTO EN 2021
-function costoVoto2021 (costoVoto2021) {
-costoVoto2021 = gasto2021() / votos2021;
-return costoVoto2021.toFixed(2); 
+    costoVoto() {
+
+        return (this.presupuestoElecciones() / this.votos).toFixed(2);
+    }
 
 }
 
-//FUNCIÓN PARA CALCULAR LA PARTICIPACIÓN CIUDADANA 2015
-function participacion2015 (participacion2015) {
-    participacion2015 = (votos2015/listaNominal2015)*100;
-    return participacion2015.toFixed(2);
+//ARRAY Lista procesos electorales analizados
+
+const procesosElectorales = [2015, 2018, 2021];
+//ACCESO ARRAY
+for (let index=0; index<procesosElectorales.length; index++){
+    console.log(procesosElectorales[index]);
 }
-//FUNCIÓN PARA CALCULAR LA PARTICIPACIÓN CIUDADANA 2018
-function participacion2018 (participacion2018) {
-    participacion2018 = (votos2018/listaNominal2018)*100;
-    return participacion2018.toFixed(2);
-}
-//FUNCIÓN PARA CALCULAR LA PARTICIPACIÓN CIUDADANA 2021
-function participacion2021 (participacion2021) {
-    participacion2021 = (votos2021/listaNominal2021)*100;
-    return participacion2021.toFixed(2);
-}
-let fecha = prompt("Ingresa el año de la elección federal en México:\n\n Opciones válidas: 2015 - 2018 - 2021");
+
+console.log (typeof procesosElectorales[0]);
+console.log(`Número de Procesos Electorales analizados: ${procesosElectorales.length}`);
+console.log(`Procesos Electorales analizados: ${procesosElectorales.toString()}`);
+
+//ARRAY Presupuesto Previo
+const presupuestoPrevio = [539799052,699534390, 479250873]
+console.log (typeof presupuestoPrevio[0]);
+console.log(`Presupuesto del año anterior al Proceso Electoral analizado:\n2015: ${presupuestoPrevio[0]}\n2018: ${presupuestoPrevio[1]}\n2021: ${presupuestoPrevio[2]}`);
+
+//ARRAY Presupuesto Año Electoral
+const presupuestoActual = [4196776135,7144961645, 7861864517]
+console.log(`Presupuesto del año correspondiente al Proceso Electoral analizado:\n2015: ${presupuestoActual[0]}\n2018: ${presupuestoActual[1]}\n2021: ${presupuestoActual[2]}`);
+
+//ARRAY Presupuesto a Partidos políticos
+const presupuestoPartidos = [5355522828,4138727092, 7226003636]
+console.log(`Presupuesto asignado a los partidos políticos:\n2015: ${presupuestoPartidos[0]}\n2018: ${presupuestoPartidos[1]}\n2021: ${presupuestoPartidos[2]}`);
+
+//ARRAY Votos
+const votos = [39864082,56611027, 49151320]
+console.log(`Votos emitidos en el Proceso Electoral:\n2015: ${votos[0]}\n2018: ${votos[1]}\n2021: ${votos[2]}`);
+
+//ARRAY Lista Nominal
+const listaNominal = [83536377,89250881, 93328771]
+console.log(`Lista Nominal de electores para el Proceso Electoral:\n2015: ${listaNominal[0]}\n2018: ${listaNominal[1]}\n2021: ${listaNominal[2]}`);
+
+
+//OBJETO procesoElectoral2015
+
+const procesoElectoral2015 = new ProcesoElectoral(
+    presupuestoPrevio [0], presupuestoActual[0], presupuestoPartidos[0], votos[0], listaNominal [0] 
+)
+
+//OBJETO procesoElectoral2018
+
+const procesoElectoral2018 = new ProcesoElectoral(
+    presupuestoPrevio [1], presupuestoActual[1], presupuestoPartidos[1], votos[1], listaNominal [1]
+)
+
+
+//OBJETO procesoElectoral2021
+
+const procesoElectoral2021 = new ProcesoElectoral(
+    presupuestoPrevio [2], presupuestoActual[2], presupuestoPartidos[2], votos[2], listaNominal [2]
+)
+
+//SIMULADOR
+
+let fecha = prompt(`Ingresa el año de la elección federal en México:\n\n Opciones válidas: ${procesosElectorales.join("-")}`);
 
 while (fecha != "ESC") {
 
-if (fecha == 2015) {
-    alert (`Con una participación ciudadana de ${participacion2015 ()}% en la elección federal de ${fecha}, el costo de cada voto fue de ${costoVoto2015()} pesos. `);
-    fecha = prompt("Ingresa el año de la elección federal en México:\n\n Opciones válidas: 2015 - 2018 - 2021");
+    if (fecha == procesosElectorales[0]) {
+        alert(`Con una participación ciudadana de ${procesoElectoral2015.participacion()}% en la elección federal de ${fecha}, el costo de cada voto fue de ${procesoElectoral2015.costoVoto()} pesos. `);
+        fecha = prompt(`Ingresa el año de la elección federal en México:\n\n Opciones válidas: ${procesosElectorales.join("-")}`);
+    }
+    else if (fecha == procesosElectorales[1]) {
+        alert(`Con una participación ciudadana de ${procesoElectoral2018.participacion()}% en la elección federal de ${fecha}, el costo de cada voto fue de ${procesoElectoral2018.costoVoto()} pesos. `);
+        fecha = prompt(`Ingresa el año de la elección federal en México:\n\n Opciones válidas: ${procesosElectorales.join("-")}`);
+    }
+    else if (fecha == procesosElectorales[2]) {
+        alert(`Con una participación ciudadana de ${procesoElectoral2021.participacion()}% en la elección federal de ${fecha}, el costo de cada voto fue de ${procesoElectoral2021.costoVoto()} pesos. `);
+        fecha = prompt(`Ingresa el año de la elección federal en México:\n\n Opciones válidas: ${procesosElectorales.join("-")}`);
+    }
+    else {
+        alert(`No ingresaste una opción válida.`);
+        fecha = prompt(`Ingresa el año de la elección federal en México:\n\n Opciones válidas: ${procesosElectorales.join("-")}`);
+    }
 }
-else if (fecha == 2018) {
-    alert (`Con una participación ciudadana de ${participacion2018 ()}% en la elección federal de ${fecha}, el costo de cada voto fue de ${costoVoto2018()} pesos. `);
-    fecha = prompt("Ingresa el año de la elección federal en México:\n\n Opciones válidas: 2015 - 2018 - 2021");
-}
-else if (fecha == 2021) {
-    alert (`Con una participación ciudadana de ${participacion2021 ()}% en la elección federal de ${fecha}, el costo de cada voto fue de ${costoVoto2021()} pesos. `);
-    fecha = prompt("Ingresa el año de la elección federal en México:\n\n Opciones válidas: 2015 - 2018 - 2021");
-}
-else {
-    alert(`No ingresaste una opción válida.`);
-    fecha = prompt("Ingresa el año de la elección federal en México:\n\n Opciones válidas: 2015 - 2018 - 2021");
-}
-}
-
-
