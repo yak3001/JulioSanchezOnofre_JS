@@ -10,23 +10,65 @@
     <h1>
         Calculadora del costo del voto en México
     </h1>
-    <form id="calculadora-costo" >
-        <input type="number" id="input-fecha" maxlength="4" min="2012" max="2021" step="3" autocomplete="off">
-        <button>Calcular</button>
-
-    </form>
     <h2>
-        El simulador muestra cuánto ha costado cada voto emitido en las últimas elecciones federales.
+        Conoce cuánto ha costado cada voto emitido en las últimas elecciones federales.
     </h2>
+    <div>
     <h3>
         Variables para el cálculo:
     </h3>
     <ul>
-        <li>Lista nominal del año electoral</li>
-        <li>Participación ciudadana</li>
         <li>Presupuesto asignado a la organización del Proceso Electoral</li>
         <li>Recursos públicos asignados a los partidos políticos</li>
+        <li>Participación ciudadana</li>
+        <li>Lista nominal del año electoral</li>
     </ul>
+
+   <div>
+    <form id="calculadora-costo" >
+        <h4>Ingresa el año de la elección: 
+        <input type="number" id="input-fecha" maxlength="4" min="2012" max="2021" step="3" autocomplete="off"></h4>
+    <p>
+        <button id="calcular">Calcular costo del voto</button>
+        <button id = "boton-variables">Mostrar Variables</button>
+        <button id="borrar">Limpiar</button>
+    </p>
+    <div id="calculo"> </div>
+</form>
+   </div>
+<div>
+    <h3>¿Sabías que si participan más personas, el costo del voto disminuye? </h3>
+    <div>
+        <form id="calculadora-participacion"></form>
+        <h4>Ingresa el año de la elección: 
+            <input type="number" id="input-fecha-participacion" maxlength="4" min="2012" max="2021" step="3" autocomplete="off"></h4>
+        <p>
+        Participación: 
+    <input type="range" id="barra" value="50%">
+    <button onclick="menos()">-</button>
+    <button onclick="mas()">+</button>
+        </p>
+    </form>
+        </div>
+    </div>
+    <div id="participacion"> </div>
+
+</div>
+    
+
+<!-- <aside>
+<div>
+    <h2>¿Sabías que si participan más personas, el costo del voto disminuye? </h2>
+    <p>
+    Participación: 
+<input type="range" id="myRange" value="50">
+<button onclick="myFunctiona()">-</button>
+<button onclick="myFunctionb()">+</button>
+</p>
+
+<p id="demo"></p>
+</div>
+</aside> -->
     <script src="scripts/main.js"></script>
     
 

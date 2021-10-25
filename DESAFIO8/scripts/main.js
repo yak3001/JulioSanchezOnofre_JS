@@ -7,11 +7,13 @@ class ProcesoElectoral {
         this.presupuestoPartidos = presupuestoPartidos.value;
         this.votos = votos.value;
         this.listaNominal = listaNominal.value;
+
     }
 
     participacion() {
         return ((this.votos / this.listaNominal) * 100).toFixed(2);
     }
+
 
     presupuestoElecciones() {
         return this.presupuestoPrevio + this.presupuestoActual + this.presupuestoPartidos;
@@ -22,7 +24,13 @@ class ProcesoElectoral {
         return (this.presupuestoElecciones() / this.votos).toFixed(2);
     }
 
+    votosPorcentaje() {
+        return (this.participacion() * this.listaNominal) / 100
+    }
+
 }
+
+
 
 //ARRAY Lista procesos electorales analizados
 
@@ -43,6 +51,7 @@ procesosElectorales.sort((a, b) => { //Ordenando el array
 for (let index = 0; index < procesosElectorales.length; index++) {
     console.log(procesosElectorales[index]);
 }
+
 console.log(typeof procesosElectorales[0]);
 console.log(`Número de Procesos Electorales analizados: ${procesosElectorales.length}`);
 console.log(`Procesos Electorales analizados: ${procesosElectorales.toString()}`);
@@ -66,12 +75,6 @@ presupuestoPrevio.sort((a, b) => { //Ordenando el array
 });
 
 console.log('Presupuesto del año anterior al Proceso Electoral analizado:', presupuestoPrevio);
-// document.write("<h3>Presupuesto del año anterior a la elección, destinado a la organización del Proceso Electoral:</h3>");
-// document.write("<ul><li>Proceso Electoral: " + presupuestoPrevio[0].name + " = $" + new Intl.NumberFormat().format(presupuestoPrevio[0].value) + "</li>");
-// document.write("<li>Proceso Electoral: " + presupuestoPrevio[1].name + " = $" + new Intl.NumberFormat().format(presupuestoPrevio[1].value) + "</li>");
-// document.write("<li>Proceso Electoral: " + presupuestoPrevio[2].name + " = $" + new Intl.NumberFormat().format(presupuestoPrevio[2].value) + "</li>");
-// document.write("<li>Proceso Electoral: " + presupuestoPrevio[3].name + " = $" + new Intl.NumberFormat().format(presupuestoPrevio[3].value) + "</li></ul>");
-
 
 //ARRAY Presupuesto Año Electoral
 const presupuestoActual = [
@@ -92,13 +95,6 @@ presupuestoActual.sort((a, b) => { //ordenando el array
 });
 
 console.log('Presupuesto del año correspondiente al Proceso Electoral analizado:', presupuestoActual);
-// document.write("<h3>Presupuesto del año de la elección, destinado al Proceso Electoral:</h3>");
-// document.write("<ul><li>Proceso Electoral: " + presupuestoActual[0].name + " = $" + new Intl.NumberFormat().format(presupuestoActual[0].value) + "</li>");
-// document.write("<li>Proceso Electoral: " + presupuestoActual[1].name + " = $" + new Intl.NumberFormat().format(presupuestoActual[1].value) + "</li>");
-// document.write("<li>Proceso Electoral: " + presupuestoActual[2].name + " = $" + new Intl.NumberFormat().format(presupuestoActual[2].value) + "</li>");
-// document.write("<li>Proceso Electoral: " + presupuestoActual[3].name + " = $" + new Intl.NumberFormat().format(presupuestoActual[3].value) + "</li></ul>");
-
-
 
 const presupuestoPartidos = [
     { name: '2015', value: 5355522828 },
@@ -118,14 +114,6 @@ presupuestoPartidos.sort((a, b) => { //ordenando el array
 });
 
 console.log('Presupuesto de los Partidos Políticos en el año del Proceso Electoral analizado:', presupuestoPartidos);
-// document.write("<h3>Presupuesto destinado a los Partidos Políticos para el año de la elección:</h3>");
-// document.write("<ul><li>Proceso Electoral: " + presupuestoPartidos[0].name + " = $" + new Intl.NumberFormat().format(presupuestoPartidos[0].value) + "</li>");
-// document.write("<li>Proceso Electoral: " + presupuestoPartidos[1].name + " = $" + new Intl.NumberFormat().format(presupuestoPartidos[1].value) + "</li>");
-// document.write("<li>Proceso Electoral: " + presupuestoPartidos[2].name + " = $" + new Intl.NumberFormat().format(presupuestoPartidos[2].value) + "</li>");
-// document.write("<li>Proceso Electoral: " + presupuestoPartidos[3].name + " = $" + new Intl.NumberFormat().format(presupuestoPartidos[3].value) + "</li></ul>");
-
-
-
 
 //ARRAY Votos
 const votos = [
@@ -146,12 +134,6 @@ votos.sort((a, b) => { //ordenando el array
 });
 
 console.log('Votos emitidos en el Proceso Electoral:', votos);
-// document.write("<h3>Número de votos emitidos en la jornada electoral:</h3>");
-// document.write("<ul><li>Proceso Electoral: " + votos[0].name + " = $" + new Intl.NumberFormat().format(votos[0].value) + "</li>");
-// document.write("<li>Proceso Electoral: " + votos[1].name + " = " + new Intl.NumberFormat().format(votos[1].value) + "</li>");
-// document.write("<li>Proceso Electoral: " + votos[2].name + " = " + new Intl.NumberFormat().format(votos[2].value) + "</li>");
-// document.write("<li>Proceso Electoral: " + votos[3].name + " = " + new Intl.NumberFormat().format(votos[3].value) + "</li></ul>");
-
 
 //ARRAY Lista Nominal
 const listaNominal = [
@@ -172,12 +154,6 @@ listaNominal.sort((a, b) => { //ordenando el array
 });
 
 console.log('Registros en la Lista Nominal:', listaNominal);
-// document.write("<h3>Registros en la Lista Nominal para el año electoral (universo de posibles votantes):</h3>");
-// document.write("<ul><li>Proceso Electoral: " + listaNominal[0].name + " = " + new Intl.NumberFormat().format(listaNominal[0].value) + "</li>");
-// document.write("<li>Proceso Electoral: " + listaNominal[1].name + " = " + new Intl.NumberFormat().format(listaNominal[1].value) + "</li>");
-// document.write("<li>Proceso Electoral: " + listaNominal[2].name + " = " + new Intl.NumberFormat().format(listaNominal[2].value) + "</li>");
-// document.write("<li>Proceso Electoral: " + listaNominal[3].name + " = " + new Intl.NumberFormat().format(listaNominal[3].value) + "</li></ul>");
-
 
 //OBJETO procesoElectoral2012
 
@@ -204,32 +180,161 @@ const procesoElectoral2021 = new ProcesoElectoral(
 )
 
 
-//SIMULADOR
+//CALCULADORA DEL VOTO EN LAS ELECCIONES
 
 const calculadoraCosto = document.getElementById('calculadora-costo');
 const inputFecha = document.getElementById('input-fecha');
-calculadoraCosto.onsubmit = (event) => {
-    event.preventDefault()
-   
-    let fecha = inputFecha.value;
-    let mensaje = document.createElement("p");
+const inputFechaParticipacion = document.getElementById('input-fecha-participacion');
+const botonCalcular = document.getElementById('calcular');
+const botonVariables = document.getElementById('boton-variables');
+const botonBorrar = document.getElementById('borrar');
+let mensaje = document.getElementById("calculo");
+let variables = document.getElementById("calculo");
+let participacion = document.getElementById("participacion");
 
+botonCalcular.onclick = (event) => {
+    event.preventDefault();
+    let fecha = inputFecha.value;
     if (fecha == procesosElectorales[0]) {
-        mensaje.innerHTML = "Con una participación ciudadana de <script>function procesoElectoral2012.participacion();</script>% en la elección federal de <script>${fecha}</script>, el costo de cada voto fue de <script>procesoElectoral2012.costoVoto()</script> pesos";
-        document.body.appendChild (mensaje);
-    }  
+        mensaje.innerHTML = `<h3>Proceso Electoral ${procesosElectorales[0] - 1}-${procesosElectorales[0]}</h3><p>Con una participación ciudadana de <b>${procesoElectoral2012.participacion()}%</b> en la elección federal de <b>${fecha}</b>, el costo de cada voto fue de <b>${procesoElectoral2012.costoVoto()} pesos</b>.</p>`;
+
+        ;
+        //document.body.div.appendChild(mensaje);
+
+    }
+
     else if (fecha == procesosElectorales[1]) {
-                alert(`Con una participación ciudadana de ${procesoElectoral2015.participacion()}% en la elección federal de ${fecha}, el costo de cada voto fue de ${procesoElectoral2015.costoVoto()} pesos. `);
+        mensaje.innerHTML = `<h3>Proceso Electoral ${procesosElectorales[1] - 1}-${procesosElectorales[1]}</h3><p>Con una participación ciudadana de <b>${procesoElectoral2015.participacion()}%</b> en la elección federal de <b>${fecha}</b>, el costo de cada voto fue de <b>${procesoElectoral2015.costoVoto()} pesos</b>.</p> `;
+        // document.body.div.appendChild(mensaje);
     }
     else if (fecha == procesosElectorales[2]) {
-                 alert(`Con una participación ciudadana de ${procesoElectoral2018.participacion()}% en la elección federal de ${fecha}, el costo de cada voto fue de ${procesoElectoral2018.costoVoto()} pesos. `);
+        mensaje.innerHTML = `<h3>Proceso Electoral ${procesosElectorales[2] - 1}-${procesosElectorales[2]}</h3><p>Con una participación ciudadana de <b>${procesoElectoral2018.participacion()}%</b> en la elección federal de <b>${fecha}</b>, el costo de cada voto fue de <b>${procesoElectoral2018.costoVoto()} pesos.</b></p>`;
+        //  document.body.div.appendChild(mensaje);
     }
     else if (fecha == procesosElectorales[3]) {
-         alert(`Con una participación ciudadana de ${procesoElectoral2021.participacion()}% en la elección federal de ${fecha}, el costo de cada voto fue de ${procesoElectoral2021.costoVoto()} pesos. `);
+        mensaje.innerHTML = `<h3>Proceso Electoral ${procesosElectorales[3] - 1}-${procesosElectorales[3]}</h3><p>Con una participación ciudadana de <b>${procesoElectoral2021.participacion()}%</b> en la elección federal de <b>${fecha}</b>, el costo de cada voto fue de <b>${procesoElectoral2021.costoVoto()} pesos.</b></p>`;
+        //  document.body.div.appendChild(mensaje);
     }
     else {
-          alert(`No ingresaste una opción válida.`);
+        alert(`No ingresaste una opción válida.\n\nOpciones disponibles: ${procesosElectorales.join("-")}`);
     }
-  
+
+}
+
+botonVariables.onclick = (event) => {
+    event.preventDefault();
+
+    let fecha = inputFecha.value;
+    if (fecha == procesosElectorales[0]) {
+        variables.innerHTML = `<h3>Variables ${procesosElectorales[0] - 1}-${procesosElectorales[0]}</h3><ul><li>Presupuesto del ${procesosElectorales[0] - 1} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoPrevio[0].value)}</b></li>
+        <li>Presupuesto del ${procesosElectorales[0]} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoActual[0].value)}</b></li>
+        <li>Presupuesto ${procesosElectorales[0]} para Partidos Políticos = <b>$${new Intl.NumberFormat().format(presupuestoPartidos[0].value)}</b></li>
+        <li>Votos emitidos en ${procesosElectorales[0]} = <b>${new Intl.NumberFormat().format(votos[0].value)}</b></li>
+        <li>Lista Nominal de electores en ${procesosElectorales[0]} = <b>${new Intl.NumberFormat().format(listaNominal[0].value)}</b></li></ul>`;
+        // document.body.div.appendChild(variables);
+    }
+    else if (fecha == procesosElectorales[1]) {
+        variables.innerHTML = `<h3>Variables ${procesosElectorales[1] - 1}-${procesosElectorales[1]}</h3><ul><li>Presupuesto del ${procesosElectorales[1] - 1} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoPrevio[1].value)}</b></li>
+        <li>Presupuesto del ${procesosElectorales[1]} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoActual[1].value)}</b></li>
+        <li>Presupuesto ${procesosElectorales[1]} para Partidos Políticos = <b>$${new Intl.NumberFormat().format(presupuestoPartidos[1].value)}</b></li>
+        <li>Votos emitidos en ${procesosElectorales[1]} = <b>${new Intl.NumberFormat().format(votos[1].value)}</b></li>
+        <li>Lista Nominal de electores en ${procesosElectorales[1]} = <b>${new Intl.NumberFormat().format(listaNominal[1].value)}</b></li></ul>`;
+        // document.body.div.appendChild(variables);
+    }
+    else if (fecha == procesosElectorales[2]) {
+        variables.innerHTML = `<h3>Variables ${procesosElectorales[2] - 1}-${procesosElectorales[2]}</h3><ul><li>Presupuesto del ${procesosElectorales[2] - 1} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoPrevio[2].value)}</b></li>
+        <li>Presupuesto del ${procesosElectorales[2]} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoActual[2].value)}</b></li>
+        <li>Presupuesto ${procesosElectorales[2]} para Partidos Políticos = <b>$${new Intl.NumberFormat().format(presupuestoPartidos[2].value)}</b></li>
+        <li>Votos emitidos en ${procesosElectorales[2]} = <b>${new Intl.NumberFormat().format(votos[2].value)}</b></li>
+        <li>Lista Nominal de electores en ${procesosElectorales[2]} = <b>${new Intl.NumberFormat().format(listaNominal[2].value)}</b></li></ul>`;
+        //  document.body.div.appendChild(variables);
+    }
+    else if (fecha == procesosElectorales[3]) {
+        variables.innerHTML = `<h3>Variables ${procesosElectorales[3] - 1}-${procesosElectorales[3]}</h3><ul><li>Presupuesto del ${procesosElectorales[3] - 1} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoPrevio[3].value)}</b></li>
+        <li>Presupuesto del ${procesosElectorales[3]} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoActual[3].value)}</b></li>
+        <li>Presupuesto ${procesosElectorales[3]} para Partidos Políticos = <b>$${new Intl.NumberFormat().format(presupuestoPartidos[3].value)}</b></li>
+        <li>Votos emitidos en ${procesosElectorales[3]} = <b>${new Intl.NumberFormat().format(votos[3].value)}</b></li>
+        <li>Lista Nominal de electores en ${procesosElectorales[3]} = <b>${new Intl.NumberFormat().format(listaNominal[3].value)}</b></li></ul>`;
+        //  document.body.div.appendChild(variables);
+    }
+    else {
+        alert((`No ingresaste una opción válida.\n\nOpciones disponibles: ${procesosElectorales.join("-")}`));
+    }
+}
+botonBorrar.onclick = (event) => {
+    event.preventDefault();
+    let borrar = mensaje.innerHTML = "";
+    let borrar2 = variables.innerHTML = "";
+    return borrar + borrar2;
+}
+
+//CALCULADORA DEL VOTO RESPECTO A LA PARTICIPACIÓN
+
+function menos() {
+    document.getElementById("barra").stepDown(10);
+    let fechaParticipacion = (inputFechaParticipacion.value);
+    let participacionPorcentaje = document.getElementById("barra");
+    let currentVal = participacionPorcentaje.value;
+
+    if (fechaParticipacion == procesosElectorales[0]) {
+        //participacionPorcentaje.defaultValue = 50;
+        calculo.value = (procesoElectoral2012.presupuestoElecciones() / ((currentVal * listaNominal[0].value) / 100)).toFixed(2);
+        document.getElementById("participacion").innerHTML =
+            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${fechaParticipacion}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
+    }
+    else if (fechaParticipacion == procesosElectorales[1]) {
+        calculo.value = (procesoElectoral2015.presupuestoElecciones() / ((currentVal * listaNominal[1].value) / 100)).toFixed(2);
+        document.getElementById("participacion").innerHTML =
+            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${fechaParticipacion}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
+    }
+    else if (fechaParticipacion == procesosElectorales[2]) {
+        calculo.value = (procesoElectoral2018.presupuestoElecciones() / ((currentVal * listaNominal[2].value) / 100)).toFixed(2);
+        document.getElementById("participacion").innerHTML =
+            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${fechaParticipacion}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
+    }
+    else if (fechaParticipacion == procesosElectorales[3]) {
+        calculo.value = (procesoElectoral2021.presupuestoElecciones() / ((currentVal * listaNominal[3].value) / 100)).toFixed(2);
+        document.getElementById("participacion").innerHTML =
+            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${fechaParticipacion}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
+    }
+    else {
+        alert(`No ingresaste una opción válida.\n\nOpciones disponibles: ${procesosElectorales.join("-")}`);
+
+    }
+    console.log(currentVal);
+    console.log(listaNominal[0].value);
+
+}
+function mas() {
+    document.getElementById("barra").stepUp(10);
+    let fechaParticipacion = (inputFechaParticipacion.value);
+    let participacionPorcentaje = document.getElementById("barra");
+    let currentVal = participacionPorcentaje.value;
+
+    if (fechaParticipacion == procesosElectorales[0]) {
+        calculo.value = (procesoElectoral2012.presupuestoElecciones() / ((currentVal * listaNominal[0].value) / 100)).toFixed(2);
+        document.getElementById("participacion").innerHTML =
+            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${fechaParticipacion}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
+    }
+    else if (fechaParticipacion == procesosElectorales[1]) {
+        calculo.value = (procesoElectoral2015.presupuestoElecciones() / ((currentVal * listaNominal[1].value) / 100)).toFixed(2);
+        document.getElementById("participacion").innerHTML =
+            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${fechaParticipacion}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
+    }
+    else if (fechaParticipacion == procesosElectorales[2]) {
+        calculo.value = (procesoElectoral2018.presupuestoElecciones() / ((currentVal * listaNominal[2].value) / 100)).toFixed(2);
+        document.getElementById("participacion").innerHTML =
+            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${fechaParticipacion}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
+    }
+    else if (fechaParticipacion == procesosElectorales[3]) {
+        calculo.value = (procesoElectoral2021.presupuestoElecciones() / ((currentVal * listaNominal[3].value) / 100)).toFixed(2);
+        document.getElementById("participacion").innerHTML =
+            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${fechaParticipacion}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
+    }
+    else {
+        alert(`No ingresaste una opción válida.\n\nOpciones disponibles: ${procesosElectorales.join("-")}`);
+    }
+    console.log(currentVal);
+    console.log(listaNominal[0].value);
 }
 
