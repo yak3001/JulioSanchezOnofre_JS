@@ -277,7 +277,6 @@ function menos() {
     let currentVal = participacionPorcentaje.value;
 
     if (fechaParticipacion == procesosElectorales[0]) {
-        //participacionPorcentaje.defaultValue = 50;
         calculo.value = (procesoElectoral2012.presupuestoElecciones() / ((currentVal * listaNominal[0].value) / 100)).toFixed(2);
         document.getElementById("participacion").innerHTML =
             `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${fechaParticipacion}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
