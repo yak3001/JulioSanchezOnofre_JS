@@ -1,0 +1,11 @@
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 200%;
+
+}
+h2, h3, div {
+    font-family: 'Poppins';
+}
+.form-label {
+    font-style:italic; 
+}
