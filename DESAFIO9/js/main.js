@@ -192,6 +192,7 @@ const botonBorrar = document.getElementById('borrar');
 let mensaje = document.getElementById("calculo");
 let variables = document.getElementById("calculo");
 let participacion = document.getElementById("participacion");
+let mostrarCalculoPersonal = document.getElementById("calculo");
 
 botonCalcular.onclick = (event) => {
     event.preventDefault();
@@ -336,34 +337,12 @@ function mas() {
 
 
 //CALCULO PERSONALIZADO CON DATOS DEL FORMULARIO
-const formCalculoPersonalizado = document.getElementById('calculo-personalizado');
-const inputPersonalPrevio = document.getElementById('personal-previo');
-const inputPersonalActual = document.getElementById('personal-actual');
-const inputPersonalPartidos = document.getElementById('personal-partidos');
-const inputPersonalVotos = document.getElementById('personal-votos');
-const inputPersonalLista = document.getElementById('personal-lista');
-let mostrarCalculoPersonal = document.getElementById("calculo");
-
-
-function personalParticipacion() {
-    return parseInt((inputPersonalVotos / inputPersonalLista) * 100).toFixed(2);
-}
-
-
-// presupuestoElecciones() {
-//     return this.presupuestoPrevio + this.presupuestoActual + this.presupuestoPartidos;
-// }
-
-// costoVoto() {
-
-//     return (this.presupuestoElecciones() / this.votos).toFixed(2);
-// }
-
-// votosPorcentaje() {
-//     return (this.participacion() * this.listaNominal) / 100
-// }
-
-console.log(personalParticipacion())
+const formCalculoPersonalizado = document.getElementById('calculo-personalizado'); //variable para obtener el formulario
+const inputPersonalPrevio = document.getElementById('personal-previo'); //variable para obtener el campo de datos
+const inputPersonalActual = document.getElementById('personal-actual'); //variable para obtener el campo de datos
+const inputPersonalPartidos = document.getElementById('personal-partidos'); //variable para obtener el campo de datos
+const inputPersonalVotos = document.getElementById('personal-votos'); //variable para obtener el campo de datos
+const inputPersonalLista = document.getElementById('personal-lista'); //variable para obtener el campo de datos
 
 
 class ProcesoElectoralPersonal {
@@ -402,27 +381,51 @@ const calculoPersonal = new ProcesoElectoralPersonal(
 const inputProcesoElectoralPersonal = JSON.parse(sessionStorage.getItem('calculoPersonal')) || [];
 const create = (calculoPersonal) => {
     inputProcesoElectoralPersonal.push(calculoPersonal)
-    sessionStorage.setItem('inputProcesoElectoralPersonal', JSON.stringify(calculoPersonal))
+    sessionStorage.setItem('inputProcesoElectoralPersonal', JSON.stringify(inputProcesoElectoralPersonal))
 }
-let outPersonalPrevio =  sessionStorage.getItem(inputProcesoElectoralPersonal.personalPrevio);
 
+//FUNCION BORRAR ELEMENTO DEL STORAGE
+function borrarStorage () {
+if (sessionStorage.getItem('inputProcesoElectoralPersonal') != null)
+            sessionStorage.removeItem('inputProcesoElectoralPersonal');
+        }
 
 // //ESCUCHANDO EVENTO DEL FORMULARIO
 
-formCalculoPersonalizado.addEventListener('submit', (event) =>{
-event.preventDefault()
+formCalculoPersonalizado.addEventListener('submit', (event) => {
+    event.preventDefault()
+    
+    const outputCalculoPersonal = new ProcesoElectoralPersonal(
+           inputPersonalPrevio, inputPersonalActual, inputPersonalPartidos, inputPersonalVotos, inputPersonalLista
+           )
+           create(outputCalculoPersonal);
 
+            function participacionPersonal() {
+                return ((parseInt(procesoPersonal[0].personalVotos) / parseInt(procesoPersonal[0].personalLista)) * 100).toFixed(2);
+            }
+        
+        
+            function presupuestoEleccionesPersonal() {
+                return (parseInt(procesoPersonal[0].personalPrevio)) + (parseInt(procesoPersonal[0].personalActual)) + (parseInt(procesoPersonal[0].personalPartidos));
+            }
+        
+            function costoVotoPersonal() {
+        
+                return (presupuestoEleccionesPersonal() / (parseInt(procesoPersonal[0].personalVotos))).toFixed(2);
+            }
 
-const calculoPersonal = new ProcesoElectoralPersonal(
-    inputPersonalPrevio, inputPersonalActual, inputPersonalPartidos, inputPersonalVotos, inputPersonalLista
+        let procesoPersonal = JSON.parse(sessionStorage.getItem('inputProcesoElectoralPersonal'));
+        
+    
+        mostrarCalculoPersonal.innerHTML =`<h3>Cálculo Personalizado</h3><p>Con una participación ciudadana de <b>${participacionPersonal()}%</b> y un presupuesto total de <b>${new Intl.NumberFormat().format(presupuestoEleccionesPersonal())} pesos</b>, el costo de cada voto sería de <b>${new Intl.NumberFormat().format(costoVotoPersonal())} pesos</b></p>
+        <br><button class="btn btn-secondary" type="reset" onclick="window.location.reload()" data-bs-dismiss="offcanvas">Cerrar</button>` 
+        
+}
 )
- create(calculoPersonal);
- mostrarCalculoPersonal.innerHTML = `aquí va el mensaje con los cálculos`;
-})
+formCalculoPersonalizado.addEventListener('reset', () => {
+    window.location.reload();
+    borrarStorage ();
 
-console.log (outPersonalPrevio);
-console.log (typeof inputPersonalPrevio)
-
-
-
+}
+)
 
