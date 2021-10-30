@@ -266,10 +266,10 @@ card21.onmousemove = () => {
        cardBody21.className = 'card-body-clic'
    } 
 
+
 //CALCULADORA DEL VOTO EN LAS ELECCIONES
 
 const calculadoraCosto = document.getElementById('calculadora-costo');
-let inputFecha = document.getElementById('input-fecha');
 const inputFechaParticipacion = document.getElementById('input-fecha-participacion');
 const botonCalcular = document.getElementById('boton-calcular');
 const botonVariables = document.getElementById('boton-variables');
@@ -279,37 +279,25 @@ let variables = document.getElementById("calculo");
 let participacion = document.getElementById("participacion");
 let mostrarCalculoPersonal = document.getElementById("calculo");
 
-console.log(inputFecha);
 
 function seleccion2012() {
-    let seleccionFecha = document.createElement("INPUT");
-    seleccionFecha.setAttribute("type", "number");
-    seleccionFecha.setAttribute("value", "2012");
-    seleccionFecha.setAttribute("id", "input-fecha");
-    document.body.appendChild(seleccionFecha);
+    let seleccionFecha = document.getElementById('btn-card-12').value
+    document.getElementById("valor-fecha").innerHTML = `<input type="number" value="${seleccionFecha}" id="input-fecha"></input>`
+
   }
 
   function seleccion2015() {
-    let seleccionFecha15 = document.createElement("INPUT");
-    seleccionFecha15.setAttribute("type", "number");
-    seleccionFecha15.setAttribute("value", "2015");
-    seleccionFecha15.setAttribute("id", "input-fecha");
-    document.body.appendChild(seleccionFecha15);
+    let seleccionFecha = document.getElementById('btn-card-15').value
+    document.getElementById("valor-fecha").innerHTML = `<input type="number" value="${seleccionFecha}" id="input-fecha"></input>`
   }
 
   function seleccion2018() {
-    let seleccionFecha18 = document.createElement("INPUT");
-    seleccionFecha18.setAttribute("type", "number");
-    seleccionFecha18.setAttribute("value", "2018");
-    seleccionFecha18.setAttribute("id", "input-fecha");
-    document.body.appendChild(seleccionFecha18);
+    let seleccionFecha = document.getElementById('btn-card-18').value
+    document.getElementById("valor-fecha").innerHTML = `<input type="number" value="${seleccionFecha}" id="input-fecha"></input>`
   }
   function seleccion2021() {
-    let seleccionFecha21 = document.createElement("INPUT");
-    seleccionFecha21.setAttribute("type", "number");
-    seleccionFecha21.setAttribute("value", "2021");
-    seleccionFecha21.setAttribute("id", "input-fecha");
-    document.body.appendChild(seleccionFecha21);
+    let seleccionFecha = document.getElementById('btn-card-21').value
+    document.getElementById("valor-fecha").innerHTML = `<input type="number" value="${seleccionFecha}" id="input-fecha"></input>`
   }
 
   function quitarSeleccion () {
@@ -339,7 +327,7 @@ botonCalcular.onclick = (event) => {
 
     }
     else {
-        mensaje.innerHTML = `No ingresaste una opción válida.<br>Las opciones disponibles son: <b>${procesosElectorales.join("-")}</b><br><img src="./media/voto-back.png" alt="voto"><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
+        mensaje.innerHTML = `No seleccionaste una opción válida.<br>Las opciones disponibles son: <b>${procesosElectorales.join("-")}</b><br><img src="./media/voto-back.png" alt="voto"><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
     }
 
 }
@@ -384,7 +372,7 @@ botonVariables.onclick = (event) => {
 
     }
     else {
-        variables.innerHTML = `No ingresaste una opción válida.<br>Las opciones disponibles son: <b>${procesosElectorales.join("-")}</b><br><img src="./media/voto-back.png" alt="voto"><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
+        variables.innerHTML = `No seleccionaste una opción válida.<br>Las opciones disponibles son: <b>${procesosElectorales.join("-")}</b><br><img src="./media/voto-back.png" alt="voto"><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
     }
 }
 
@@ -392,32 +380,31 @@ botonVariables.onclick = (event) => {
 
 function menos() {
     document.getElementById("barra").stepDown(10);
-    let fechaParticipacion = (inputFechaParticipacion.value);
     let participacionPorcentaje = document.getElementById("barra");
     let currentVal = participacionPorcentaje.value;
 
-    if (fechaParticipacion == procesosElectorales[0]) {
+    if (document.getElementById('input-fecha').value == procesosElectorales[0]) {
         calculo.value = (procesoElectoral2012.presupuestoElecciones() / ((currentVal * listaNominal[0].value) / 100)).toFixed(2);
         document.getElementById("participacion").innerHTML =
-            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${fechaParticipacion}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
+            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${document.getElementById('input-fecha').value}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
     }
-    else if (fechaParticipacion == procesosElectorales[1]) {
+    else if (document.getElementById('input-fecha').value == procesosElectorales[1]) {
         calculo.value = (procesoElectoral2015.presupuestoElecciones() / ((currentVal * listaNominal[1].value) / 100)).toFixed(2);
         document.getElementById("participacion").innerHTML =
-            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${fechaParticipacion}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
+            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${document.getElementById('input-fecha').value}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
     }
-    else if (fechaParticipacion == procesosElectorales[2]) {
+    else if (document.getElementById('input-fecha').value == procesosElectorales[2]) {
         calculo.value = (procesoElectoral2018.presupuestoElecciones() / ((currentVal * listaNominal[2].value) / 100)).toFixed(2);
         document.getElementById("participacion").innerHTML =
-            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${fechaParticipacion}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
+            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${document.getElementById('input-fecha').value}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
     }
-    else if (fechaParticipacion == procesosElectorales[3]) {
+    else if (document.getElementById('input-fecha').value == procesosElectorales[3]) {
         calculo.value = (procesoElectoral2021.presupuestoElecciones() / ((currentVal * listaNominal[3].value) / 100)).toFixed(2);
         document.getElementById("participacion").innerHTML =
-            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${fechaParticipacion}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
+            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${document.getElementById('input-fecha').value}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
     }
     else {
-        alert(`No ingresaste una opción válida.\n\nOpciones disponibles: ${procesosElectorales.join("-")}`);
+        alert(`No seleccionaste una opción válida.\n\nOpciones disponibles: ${procesosElectorales.join("-")}`);
 
     }
     console.log(currentVal);
@@ -426,32 +413,31 @@ function menos() {
 }
 function mas() {
     document.getElementById("barra").stepUp(10);
-    let fechaParticipacion = (inputFechaParticipacion.value);
     let participacionPorcentaje = document.getElementById("barra");
     let currentVal = participacionPorcentaje.value;
 
-    if (fechaParticipacion == procesosElectorales[0]) {
+    if (document.getElementById('input-fecha').value  == procesosElectorales[0]) {
         calculo.value = (procesoElectoral2012.presupuestoElecciones() / ((currentVal * listaNominal[0].value) / 100)).toFixed(2);
         document.getElementById("participacion").innerHTML =
-            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${fechaParticipacion}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
+            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${document.getElementById('input-fecha').value}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
     }
-    else if (fechaParticipacion == procesosElectorales[1]) {
+    else if (document.getElementById('input-fecha').value == procesosElectorales[1]) {
         calculo.value = (procesoElectoral2015.presupuestoElecciones() / ((currentVal * listaNominal[1].value) / 100)).toFixed(2);
         document.getElementById("participacion").innerHTML =
-            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${fechaParticipacion}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
+            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${document.getElementById('input-fecha').value}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
     }
-    else if (fechaParticipacion == procesosElectorales[2]) {
+    else if (document.getElementById('input-fecha').value == procesosElectorales[2]) {
         calculo.value = (procesoElectoral2018.presupuestoElecciones() / ((currentVal * listaNominal[2].value) / 100)).toFixed(2);
         document.getElementById("participacion").innerHTML =
-            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${fechaParticipacion}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
+            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${document.getElementById('input-fecha').value}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
     }
-    else if (fechaParticipacion == procesosElectorales[3]) {
+    else if (document.getElementById('input-fecha').value == procesosElectorales[3]) {
         calculo.value = (procesoElectoral2021.presupuestoElecciones() / ((currentVal * listaNominal[3].value) / 100)).toFixed(2);
         document.getElementById("participacion").innerHTML =
-            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${fechaParticipacion}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
+            `Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${document.getElementById('input-fecha').value}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b>`;
     }
     else {
-        alert(`No ingresaste una opción válida.\n\nOpciones disponibles: ${procesosElectorales.join("-")}`);
+        alert(`No seleccionaste una opción válida.\n\nOpciones disponibles: ${procesosElectorales.join("-")}`);
     }
     console.log(currentVal);
     console.log(listaNominal[0].value);
@@ -550,4 +536,3 @@ formCalculoPersonalizado.addEventListener('reset', () => {
 
 }
 )
-

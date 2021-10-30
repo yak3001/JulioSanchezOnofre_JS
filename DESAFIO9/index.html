@@ -45,13 +45,13 @@
     </div>
     <section class="container">
         <div>
-            <h4>Selecciona el año de la elección:
+            <h4>Selecciona el año de la elección:</h4>
                 <div class="row">
                     <div class="col-sm-6 col-lg-3">
                         <div class="card" id="card" style="width: 15rem">
                             <div class="card-body" id="cardBody">
                                 <h3 class="card-title"><b>2012</b></h3>
-                                <button class="btn btn-primary" id="btn-card-12" onclick="seleccion2012()" >Seleccionar</button>
+                                <button class="btn btn-primary" id="btn-card-12" value="2012" onclick="parseInt(seleccion2012())" >Seleccionar</button>
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                         <div class="card" id="card15" style="width: 15rem">
                             <div class="card-body" id="cardBody15">
                                 <h3 class="card-title"><b>2015</b></h3>
-                                <button class="btn btn-primary" id="btn-card-15" onclick="seleccion2015()">Seleccionar</button>
+                                <button class="btn btn-primary" id="btn-card-15" value="2015" onclick="seleccion2015()">Seleccionar</button>
                             </div>
                         </div>
                     </div>
@@ -67,7 +67,7 @@
                         <div class="card" id="card18" style="width: 15rem">
                             <div class="card-body" id="cardBody18">
                                 <h3 class="card-title"><b>2018</b></h3>
-                                <button class="btn btn-primary" id="btn-card-18" onclick="seleccion2018()">Seleccionar</button>
+                                <button class="btn btn-primary" id="btn-card-18" value="2018" onclick="seleccion2018()">Seleccionar</button>
                             </div>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                         <div class="card" id="card21" style="width: 15rem">
                             <div class="card-body" id="cardBody21">
                                 <h3 class="card-title"><b>2021</b></h3>
-                                <button class="btn btn-primary" id="btn-card-21" onclick="seleccion2021()">Seleccionar</button>
+                                <button class="btn btn-primary" id="btn-card-21" value="2021" onclick="seleccion2021()">Seleccionar</button>
                             </div>
                         </div>
                     </div>
@@ -89,32 +89,28 @@
                     </div>
                     </div>
                     <div><b>Escogiste:</b>
-                    <!-- <p id="input-fecha"></p></div> -->
-                    <!-- <input type="number" id="input-fecha" maxlength="4" min="2012" max="2021" step="3"
-                        autocomplete="off"> -->
-            </h4>
+                    <p id="valor-fecha"><input type="text" value="Selecciona año" id="input-fecha"></input></p>
+
+
             <p>
                 <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#calculo"
                     id="boton-calcular">COSTO DEL VOTO</button>
                 <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#calculo"
                     id="boton-variables">VARIABLES</button>
-                <button class="btn btn-primary" type="button" onclick="quitarSeleccion ()">RESET</button>
             </p>
             </form>
         </div>
     </section>
     <section class="container">
-        <div>
+        <div class="explainer">
             <h3>¿Sabías que si participan más personas, el costo del voto disminuye? </h3>
-            <div>
+
                 <form id="calculadora-participacion"></form>
-                <h4>Ingresa el año de la elección:
 
-            </div>
 
-            <input type="number" id="input-fecha-participacion" maxlength="4" min="2012" max="2021" step="3"
-                autocomplete="off">
-            </h4>
+            <!-- <input type="number" id="input-fecha-participacion" maxlength="4" min="2012" max="2021" step="3"
+                autocomplete="off"> -->
+           
             <p>
                 Participación:
                 <input type="range" id="barra" min="10" max="100" value="50">
@@ -124,12 +120,12 @@
             </form>
             <div id="participacion"> </div>
         </div>
-        </div>
     </section>
+
     <section class="container">
 
         <div class="container mt-3">
-            <h3>¡Haz tu propio cálculo!</h3>
+            <h3><b>¡Haz tu propio cálculo!</b></h3>
             <p>Ingresa los valores requeridos</p>
             <form class="was-validated" id="calculo-personalizado">
                 <div class="offcanvas offcanvas-end" id="calculo2"></div>

@@ -25,6 +25,8 @@ form {
 }
 .explainer {
     background-color: #880750;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 
 }
 .variables {
@@ -36,6 +38,7 @@ form {
 .row {
     align-items: center !important;
 } 
+
 
 .form-label {
     font-style:italic; 
