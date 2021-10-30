@@ -52,7 +52,7 @@ for (let index = 0; index < procesosElectorales.length; index++) {
     console.log(procesosElectorales[index]);
 }
 
-console.log(typeof procesosElectorales[0]);
+console.log(typeof procesosElectorales[1]);
 console.log(`Número de Procesos Electorales analizados: ${procesosElectorales.length}`);
 console.log(`Procesos Electorales analizados: ${procesosElectorales.toString()}`);
 
@@ -180,13 +180,98 @@ const procesoElectoral2021 = new ProcesoElectoral(
     presupuestoPrevio[3], presupuestoActual[3], presupuestoPartidos[3], votos[3], listaNominal[3]
 )
 
+//eventos
+
+const card = document.getElementById('card');
+const cardBody = document.getElementById('cardBody');
+let btnCard12= document.getElementById('btn-card-12');
+
+
+card.onmousemove = () => {
+ cardBody.className = 'card-body-over' 
+
+}
+cardBody.onmousemove = () => {
+    cardBody.className = 'card-body-over' 
+   
+   }
+card.onmouseout = () => {
+    cardBody.className = 'card-body' 
+   
+   }
+btnCard12.onmousedown = () => {
+    cardBody.className = 'card-body-clic'
+} 
+
+
+const card15 = document.getElementById('card15');
+const cardBody15 = document.getElementById('cardBody15');
+const btnCard15= document.getElementById('btn-card-15')
+
+
+card15.onmousemove = () => {
+    cardBody15.className = 'card-body-over' 
+   
+   }
+   cardBody15.onmousemove = () => {
+       cardBody15.className = 'card-body-over' 
+      
+      }
+   card15.onmouseout = () => {
+       cardBody15.className = 'card-body' 
+      
+      }
+   btnCard15.onmousedown = () => {
+       cardBody15.className = 'card-body-clic'
+   } 
+
+
+const card18 = document.getElementById('card18');
+const cardBody18 = document.getElementById('cardBody18');
+const btnCard18= document.getElementById('btn-card-18');
+
+card18.onmousemove = () => {
+    cardBody18.className = 'card-body-over' 
+   
+   }
+   cardBody18.onmousemove = () => {
+       cardBody18.className = 'card-body-over' 
+      
+      }
+   card18.onmouseout = () => {
+       cardBody18.className = 'card-body' 
+      
+      }
+   btnCard18.onmousedown = () => {
+       cardBody18.className = 'card-body-clic'
+   } 
+
+const card21 = document.getElementById('card21');
+const cardBody21 = document.getElementById('cardBody21');
+const btnCard21= document.getElementById('btn-card-21')
+
+card21.onmousemove = () => {
+    cardBody21.className = 'card-body-over' 
+   
+   }
+   cardBody21.onmousemove = () => {
+       cardBody21.className = 'card-body-over' 
+      
+      }
+   card21.onmouseout = () => {
+       cardBody21.className = 'card-body' 
+      
+      }
+   btnCard21.onmousedown = () => {
+       cardBody21.className = 'card-body-clic'
+   } 
 
 //CALCULADORA DEL VOTO EN LAS ELECCIONES
 
 const calculadoraCosto = document.getElementById('calculadora-costo');
-const inputFecha = document.getElementById('input-fecha');
+let inputFecha = document.getElementById('input-fecha');
 const inputFechaParticipacion = document.getElementById('input-fecha-participacion');
-const botonCalcular = document.getElementById('calcular');
+const botonCalcular = document.getElementById('boton-calcular');
 const botonVariables = document.getElementById('boton-variables');
 const botonBorrar = document.getElementById('borrar');
 let mensaje = document.getElementById("calculo");
@@ -194,29 +279,67 @@ let variables = document.getElementById("calculo");
 let participacion = document.getElementById("participacion");
 let mostrarCalculoPersonal = document.getElementById("calculo");
 
+console.log(inputFecha);
+
+function seleccion2012() {
+    let seleccionFecha = document.createElement("INPUT");
+    seleccionFecha.setAttribute("type", "number");
+    seleccionFecha.setAttribute("value", "2012");
+    seleccionFecha.setAttribute("id", "input-fecha");
+    document.body.appendChild(seleccionFecha);
+  }
+
+  function seleccion2015() {
+    let seleccionFecha15 = document.createElement("INPUT");
+    seleccionFecha15.setAttribute("type", "number");
+    seleccionFecha15.setAttribute("value", "2015");
+    seleccionFecha15.setAttribute("id", "input-fecha");
+    document.body.appendChild(seleccionFecha15);
+  }
+
+  function seleccion2018() {
+    let seleccionFecha18 = document.createElement("INPUT");
+    seleccionFecha18.setAttribute("type", "number");
+    seleccionFecha18.setAttribute("value", "2018");
+    seleccionFecha18.setAttribute("id", "input-fecha");
+    document.body.appendChild(seleccionFecha18);
+  }
+  function seleccion2021() {
+    let seleccionFecha21 = document.createElement("INPUT");
+    seleccionFecha21.setAttribute("type", "number");
+    seleccionFecha21.setAttribute("value", "2021");
+    seleccionFecha21.setAttribute("id", "input-fecha");
+    document.body.appendChild(seleccionFecha21);
+  }
+
+  function quitarSeleccion () {
+    let quitarItem = document.getElementById('input-fecha');
+    quitarItem.parentNode.removeChild(quitarItem);
+  }
+  
+
 botonCalcular.onclick = (event) => {
     event.preventDefault();
-    let fecha = inputFecha.value;
-    if (fecha == procesosElectorales[0]) {
-        mensaje.innerHTML = `<h3>Proceso Electoral ${procesosElectorales[0] - 1}-${procesosElectorales[0]}</h3><p>Con una participación ciudadana de <b>${procesoElectoral2012.participacion()}%</b> en la elección federal de <b>${fecha}</b>, el costo de cada voto fue de <b>${procesoElectoral2012.costoVoto()} pesos</b></p><br><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
+    
 
-        ;
+    if (document.getElementById('input-fecha').value == procesosElectorales[0]) {
+        mensaje.innerHTML = `<h3>Proceso Electoral ${procesosElectorales[0] - 1}-${procesosElectorales[0]}</h3><p>Con una participación ciudadana de <b>${procesoElectoral2012.participacion()}%</b> en la elección federal de <b>${procesosElectorales[0]}</b>, el costo de cada voto fue de <b>${procesoElectoral2012.costoVoto()} pesos</b></p><br><img src="./media/voto-back.png" alt="voto"><button class="btn btn-secondary" data-bs-dismiss="offcanvas" type="button">Cerrar</button>`;
     }
 
-    else if (fecha == procesosElectorales[1]) {
-        mensaje.innerHTML = `<h3>Proceso Electoral ${procesosElectorales[1] - 1}-${procesosElectorales[1]}</h3><p>Con una participación ciudadana de <b>${procesoElectoral2015.participacion()}%</b> en la elección federal de <b>${fecha}</b>, el costo de cada voto fue de <b>${procesoElectoral2015.costoVoto()} pesos</b></p><br><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
+    else if (document.getElementById('input-fecha').value == procesosElectorales[1]) {
+        mensaje.innerHTML = `<h3>Proceso Electoral ${procesosElectorales[1] - 1}-${procesosElectorales[1]}</h3><p>Con una participación ciudadana de <b>${procesoElectoral2015.participacion()}%</b> en la elección federal de <b>${procesosElectorales[1]}</b>, el costo de cada voto fue de <b>${procesoElectoral2015.costoVoto()} pesos</b></p><br><img src="./media/voto-back.png" alt="voto"><button class="btn btn-secondary" data-bs-dismiss="offcanvas" type="button">Cerrar</button>`;
 
     }
-    else if (fecha == procesosElectorales[2]) {
-        mensaje.innerHTML = `<h3>Proceso Electoral ${procesosElectorales[2] - 1}-${procesosElectorales[2]}</h3><p>Con una participación ciudadana de <b>${procesoElectoral2018.participacion()}%</b> en la elección federal de <b>${fecha}</b>, el costo de cada voto fue de <b>${procesoElectoral2018.costoVoto()} pesos.</b></p><br><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
+    else if (document.getElementById('input-fecha').value == procesosElectorales[2]) {
+        mensaje.innerHTML = `<h3>Proceso Electoral ${procesosElectorales[2] - 1}-${procesosElectorales[2]}</h3><p>Con una participación ciudadana de <b>${procesoElectoral2018.participacion()}%</b> en la elección federal de <b>${procesosElectorales[2]}</b>, el costo de cada voto fue de <b>${procesoElectoral2018.costoVoto()} pesos.</b></p><br><img src="./media/voto-back.png" alt="voto"><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
 
     }
-    else if (fecha == procesosElectorales[3]) {
-        mensaje.innerHTML = `<h3>Proceso Electoral ${procesosElectorales[3] - 1}-${procesosElectorales[3]}</h3><p>Con una participación ciudadana de <b>${procesoElectoral2021.participacion()}%</b> en la elección federal de <b>${fecha}</b>, el costo de cada voto fue de <b>${procesoElectoral2021.costoVoto()} pesos.</b></p><br><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
+    else if (document.getElementById('input-fecha').value == procesosElectorales[3]) {
+        mensaje.innerHTML = `<h3>Proceso Electoral ${procesosElectorales[3] - 1}-${procesosElectorales[3]}</h3><p>Con una participación ciudadana de <b>${procesoElectoral2021.participacion()}%</b> en la elección federal de <b>${procesosElectorales[3]}</b>, el costo de cada voto fue de <b>${procesoElectoral2021.costoVoto()} pesos.</b></p><br><img src="./media/voto-back.png" alt="voto"><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
 
     }
     else {
-        mensaje.innerHTML = `No ingresaste una opción válida.<br>Las opciones disponibles son: <b>${procesosElectorales.join("-")}</b><br><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
+        mensaje.innerHTML = `No ingresaste una opción válida.<br>Las opciones disponibles son: <b>${procesosElectorales.join("-")}</b><br><img src="./media/voto-back.png" alt="voto"><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
     }
 
 }
@@ -224,45 +347,44 @@ botonCalcular.onclick = (event) => {
 botonVariables.onclick = (event) => {
     event.preventDefault();
 
-    let fecha = inputFecha.value;
-    if (fecha == procesosElectorales[0]) {
+    if (document.getElementById('input-fecha').value == procesosElectorales[0]) {
         variables.innerHTML = `<h3>Variables ${procesosElectorales[0] - 1}-${procesosElectorales[0]}</h3><ul><li>Presupuesto del ${procesosElectorales[0] - 1} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoPrevio[0].value)}</b></li>
         <li>Presupuesto del ${procesosElectorales[0]} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoActual[0].value)}</b></li>
         <li>Presupuesto ${procesosElectorales[0]} para Partidos Políticos = <b>$${new Intl.NumberFormat().format(presupuestoPartidos[0].value)}</b></li>
         <li>Votos emitidos en ${procesosElectorales[0]} = <b>${new Intl.NumberFormat().format(votos[0].value)}</b></li>
         <li>Lista Nominal de electores en ${procesosElectorales[0]} = <b>${new Intl.NumberFormat().format(listaNominal[0].value)}</b></li></ul>
-        <br><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
+        <br><img src="./media/voto-back.png" alt="voto"><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
 
     }
-    else if (fecha == procesosElectorales[1]) {
+    else if (document.getElementById('input-fecha').value == procesosElectorales[1]) {
         variables.innerHTML = `<h3>Variables ${procesosElectorales[1] - 1}-${procesosElectorales[1]}</h3><ul><li>Presupuesto del ${procesosElectorales[1] - 1} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoPrevio[1].value)}</b></li>
         <li>Presupuesto del ${procesosElectorales[1]} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoActual[1].value)}</b></li>
         <li>Presupuesto ${procesosElectorales[1]} para Partidos Políticos = <b>$${new Intl.NumberFormat().format(presupuestoPartidos[1].value)}</b></li>
         <li>Votos emitidos en ${procesosElectorales[1]} = <b>${new Intl.NumberFormat().format(votos[1].value)}</b></li>
         <li>Lista Nominal de electores en ${procesosElectorales[1]} = <b>${new Intl.NumberFormat().format(listaNominal[1].value)}</b></li></ul>
-        <br><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
+        <br><img src="./media/voto-back.png" alt="voto"><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
 
     }
-    else if (fecha == procesosElectorales[2]) {
+    else if (document.getElementById('input-fecha').value == procesosElectorales[2]) {
         variables.innerHTML = `<h3>Variables ${procesosElectorales[2] - 1}-${procesosElectorales[2]}</h3><ul><li>Presupuesto del ${procesosElectorales[2] - 1} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoPrevio[2].value)}</b></li>
         <li>Presupuesto del ${procesosElectorales[2]} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoActual[2].value)}</b></li>
         <li>Presupuesto ${procesosElectorales[2]} para Partidos Políticos = <b>$${new Intl.NumberFormat().format(presupuestoPartidos[2].value)}</b></li>
         <li>Votos emitidos en ${procesosElectorales[2]} = <b>${new Intl.NumberFormat().format(votos[2].value)}</b></li>
         <li>Lista Nominal de electores en ${procesosElectorales[2]} = <b>${new Intl.NumberFormat().format(listaNominal[2].value)}</b></li></ul>
-        <br><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
+        <br><img src="./media/voto-back.png" alt="voto"><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
 
     }
-    else if (fecha == procesosElectorales[3]) {
+    else if (document.getElementById('input-fecha').value == procesosElectorales[3]) {
         variables.innerHTML = `<h3>Variables ${procesosElectorales[3] - 1}-${procesosElectorales[3]}</h3><ul><li>Presupuesto del ${procesosElectorales[3] - 1} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoPrevio[3].value)}</b></li>
         <li>Presupuesto del ${procesosElectorales[3]} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoActual[3].value)}</b></li>
         <li>Presupuesto ${procesosElectorales[3]} para Partidos Políticos = <b>$${new Intl.NumberFormat().format(presupuestoPartidos[3].value)}</b></li>
         <li>Votos emitidos en ${procesosElectorales[3]} = <b>${new Intl.NumberFormat().format(votos[3].value)}</b></li>
         <li>Lista Nominal de electores en ${procesosElectorales[3]} = <b>${new Intl.NumberFormat().format(listaNominal[3].value)}</b></li></ul>
-        <br><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
+        <br><img src="./media/voto-back.png" alt="voto"><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
 
     }
     else {
-        variables.innerHTML = `No ingresaste una opción válida.<br>Las opciones disponibles son: <b>${procesosElectorales.join("-")}</b><br><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
+        variables.innerHTML = `No ingresaste una opción válida.<br>Las opciones disponibles son: <b>${procesosElectorales.join("-")}</b><br><img src="./media/voto-back.png" alt="voto"><button class="btn btn-secondary" type="button" data-bs-dismiss="offcanvas">Cerrar</button>`;
     }
 }
 
@@ -418,7 +540,7 @@ formCalculoPersonalizado.addEventListener('submit', (event) => {
         
     
         mostrarCalculoPersonal.innerHTML =`<h3>Cálculo Personalizado</h3><p>Con una participación ciudadana de <b>${participacionPersonal()}%</b> y un presupuesto total de <b>${new Intl.NumberFormat().format(presupuestoEleccionesPersonal())} pesos</b>, el costo de cada voto sería de <b>${new Intl.NumberFormat().format(costoVotoPersonal())} pesos</b></p>
-        <br><button class="btn btn-secondary" type="reset" onclick="window.location.reload()" data-bs-dismiss="offcanvas">Cerrar</button>` 
+        <br><img src="./media/voto-back.png" alt="voto"><button class="btn btn-secondary" type="reset" onclick="window.location.reload()" data-bs-dismiss="offcanvas">Cerrar</button>` 
         
 }
 )

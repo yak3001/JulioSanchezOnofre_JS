@@ -21,13 +21,17 @@
 </head>
 
 <body>
-    <h1>
-        Calculadora del costo del voto en México
-    </h1>
-    <h2>
-        Conoce cuánto ha costado cada voto emitido en las últimas elecciones federales.
-    </h2>
-    <div>
+    <div class="titulo">
+        <h1>
+            Calculadora del costo del voto en México
+        </h1>
+    </div>
+    <div class="container explainer">
+        <h2>
+            <b>Conoce cuánto ha costado cada voto emitido en las últimas elecciones federales. </b>
+        </h2>
+    </div>
+    <div class="container variables">
         <h3>
             Variables para el cálculo:
         </h3>
@@ -37,83 +41,147 @@
             <li>Participación ciudadana</li>
             <li>Lista nominal del año electoral</li>
         </ul>
-            <form id="calculadora-costo">
-                <div class="offcanvas offcanvas-end" id="calculo">
-                    <div class="offcanvas-header">
+    </div>
+    </div>
+    <section class="container">
+        <div>
+            <h4>Selecciona el año de la elección:
+                <div class="row">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card" id="card" style="width: 15rem">
+                            <div class="card-body" id="cardBody">
+                                <h3 class="card-title"><b>2012</b></h3>
+                                <button class="btn btn-primary" id="btn-card-12" onclick="seleccion2012()" >Seleccionar</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="offcanvas-body">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card" id="card15" style="width: 15rem">
+                            <div class="card-body" id="cardBody15">
+                                <h3 class="card-title"><b>2015</b></h3>
+                                <button class="btn btn-primary" id="btn-card-15" onclick="seleccion2015()">Seleccionar</button>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                <h4>Ingresa el año de la elección:
-                    <input type="number" id="input-fecha" maxlength="4" min="2012" max="2021" step="3"
-                        autocomplete="off">
-                </h4>
-                <p>
-                    <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#calculo" id="calcular">Calcular costo del voto</button>
-                    <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#calculo" id="boton-variables">Mostrar Variables</button>
-                </p>
-                <!-- <div id="calculo"> </div> -->
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card" id="card18" style="width: 15rem">
+                            <div class="card-body" id="cardBody18">
+                                <h3 class="card-title"><b>2018</b></h3>
+                                <button class="btn btn-primary" id="btn-card-18" onclick="seleccion2018()">Seleccionar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card" id="card21" style="width: 15rem">
+                            <div class="card-body" id="cardBody21">
+                                <h3 class="card-title"><b>2021</b></h3>
+                                <button class="btn btn-primary" id="btn-card-21" onclick="seleccion2021()">Seleccionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form id="calculadora-costo">
+                    <div class="offcanvas offcanvas-end" id="calculo">
+                        <div class="offcanvas-header">
+                        </div>
+                        <div class="offcanvas-body">
+                        </div>
+                    </div>
+                    </div>
+                    <div><b>Escogiste:</b>
+                    <!-- <p id="input-fecha"></p></div> -->
+                    <!-- <input type="number" id="input-fecha" maxlength="4" min="2012" max="2021" step="3"
+                        autocomplete="off"> -->
+            </h4>
+            <p>
+                <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#calculo"
+                    id="boton-calcular">COSTO DEL VOTO</button>
+                <button class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#calculo"
+                    id="boton-variables">VARIABLES</button>
+                <button class="btn btn-primary" type="button" onclick="quitarSeleccion ()">RESET</button>
+            </p>
             </form>
         </div>
+    </section>
+    <section class="container">
         <div>
             <h3>¿Sabías que si participan más personas, el costo del voto disminuye? </h3>
             <div>
                 <form id="calculadora-participacion"></form>
                 <h4>Ingresa el año de la elección:
-                    <input type="number" id="input-fecha-participacion" maxlength="4" min="2012" max="2021" step="3"
-                        autocomplete="off">
-                </h4>
-                <p>
-                    Participación:
-                    <input type="range" id="barra" min="10" max="100" value="50">
-                    <button onclick="menos()">-</button>
-                    <button onclick="mas()">+</button>
-                </p>
-                </form>
+
             </div>
+
+            <input type="number" id="input-fecha-participacion" maxlength="4" min="2012" max="2021" step="3"
+                autocomplete="off">
+            </h4>
+            <p>
+                Participación:
+                <input type="range" id="barra" min="10" max="100" value="50">
+                <button onclick="menos()">-</button>
+                <button onclick="mas()">+</button>
+            </p>
+            </form>
+            <div id="participacion"> </div>
         </div>
-        <div id="participacion"> </div>
+        </div>
+    </section>
+    <section class="container">
+
         <div class="container mt-3">
             <h3>¡Haz tu propio cálculo!</h3>
             <p>Ingresa los valores requeridos</p>
             <form class="was-validated" id="calculo-personalizado">
                 <div class="offcanvas offcanvas-end" id="calculo2"></div>
-              <div class="mb-3 mt-3">
-                <label for="uname" class="form-label">Presupuesto del año previo a las elecciones:</label>
-                <input type="number" class="form-control" id="personal-previo" placeholder="Ingresa monto sin decimales" maxlength="12" autocomplete="off" name="personal-previo" required >
-                <div class="valid-feedback">Válido.</div>
-                <div class="invalid-feedback">Ingresa un monto válido</div>
-              </div>
-            <div class="mb-3 mt-3">
-                <label for="uname" class="form-label">Presupuesto del año de las elecciones para el Proceso Electoral:</label>
-                <input type="number" class="form-control" id="personal-actual" placeholder="Ingresa monto sin decimales" maxlength="12" autocomplete="off" name="personal-previo" required >
-                <div class="valid-feedback">Válido.</div>
-                <div class="invalid-feedback">Ingresa un monto válido</div>
-              </div>
-            <div class="mb-3 mt-3">
-                <label for="uname" class="form-label">Presupuesto del año de las elecciones para Partidos Políticos:</label>
-                <input type="number" class="form-control" id="personal-partidos" placeholder="Ingresa monto sin decimales" maxlength="12" autocomplete="off" name="personal-previo" required >
-                <div class="valid-feedback">Válido.</div>
-                <div class="invalid-feedback">Ingresa un monto válido</div>
-              </div>
-            <div class="mb-3 mt-3">
-                <label for="uname" class="form-label">Votos emitidos:</label>
-                <input type="number" class="form-control" id="personal-votos" placeholder="Ingresa monto sin decimales" maxlength="12" autocomplete="off" name="personal-previo" required >
-                <div class="valid-feedback">Válido.</div>
-                <div class="invalid-feedback">Ingresa una cifra válida</div>
-              </div>
-            <div class="mb-3 mt-3">
-                <label for="uname" class="form-label">Lista Nominal del año electoral:</label>
-                <input type="number" class="form-control" id="personal-lista" placeholder="Ingresa monto sin decimales" maxlength="12" autocomplete="off" name="personal-previo" required >
-                <div class="valid-feedback">Válido.</div>
-                <div class="invalid-feedback">Ingresa una cifra válida</div>
-              </div>
-            <button type="submit" class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#calculo">Calcular</button>
-            <button type="reset" onclick=" window.location.reload()" class="btn btn-primary">Limpiar</button>
+                <div class="mb-3 mt-3">
+                    <label for="uname" class="form-label">Presupuesto del año previo a las elecciones:</label>
+                    <input type="number" class="form-control" id="personal-previo"
+                        placeholder="Ingresa monto sin decimales" maxlength="12" autocomplete="off"
+                        name="personal-previo" required>
+                    <div class="valid-feedback">Válido.</div>
+                    <div class="invalid-feedback">Ingresa un monto válido</div>
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="uname" class="form-label">Presupuesto del año de las elecciones para el Proceso
+                        Electoral:</label>
+                    <input type="number" class="form-control" id="personal-actual"
+                        placeholder="Ingresa monto sin decimales" maxlength="12" autocomplete="off"
+                        name="personal-previo" required>
+                    <div class="valid-feedback">Válido.</div>
+                    <div class="invalid-feedback">Ingresa un monto válido</div>
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="uname" class="form-label">Presupuesto del año de las elecciones para Partidos
+                        Políticos:</label>
+                    <input type="number" class="form-control" id="personal-partidos"
+                        placeholder="Ingresa monto sin decimales" maxlength="12" autocomplete="off"
+                        name="personal-previo" required>
+                    <div class="valid-feedback">Válido.</div>
+                    <div class="invalid-feedback">Ingresa un monto válido</div>
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="uname" class="form-label">Votos emitidos:</label>
+                    <input type="number" class="form-control" id="personal-votos"
+                        placeholder="Ingresa monto sin decimales" maxlength="12" autocomplete="off"
+                        name="personal-previo" required>
+                    <div class="valid-feedback">Válido.</div>
+                    <div class="invalid-feedback">Ingresa una cifra válida</div>
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="uname" class="form-label">Lista Nominal del año electoral:</label>
+                    <input type="number" class="form-control" id="personal-lista"
+                        placeholder="Ingresa monto sin decimales" maxlength="12" autocomplete="off"
+                        name="personal-previo" required>
+                    <div class="valid-feedback">Válido.</div>
+                    <div class="invalid-feedback">Ingresa una cifra válida</div>
+                </div>
+                <button type="submit" class="btn btn-primary" data-bs-toggle="offcanvas"
+                    data-bs-target="#calculo">Calcular</button>
+                <button type="reset" onclick=" window.location.reload()" class="btn btn-primary">Limpiar</button>
             </form>
-          </div>
+        </div>
+    </section>
 
-    </div>
     <script src="js/main.js"></script>
 
 
