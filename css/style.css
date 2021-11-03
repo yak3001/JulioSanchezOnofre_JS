@@ -1,0 +1,114 @@
+body {
+    background-color: black !important;
+
+}
+
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 250% !important;
+}
+h2, h3, div {
+    font-family: 'Poppins';
+    color:#e5c2dc;
+}
+
+h3 {
+    font-size: 150% !important;
+}
+form {
+    color:#e5c2dc;
+}
+
+.header, .footer {
+    color: black;
+    background-color: #ff01b2;
+    text-align: center;
+}
+.explainer {
+    background-color: #880750;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+}
+.variables {
+    background-color: black;
+    color: white;
+}
+
+
+.row {
+    justify-content:center !important;
+} 
+
+
+.form-label {
+    font-style:italic; 
+}
+
+.offcanvas {
+    background-color: black !important;
+    overflow-y: scroll;
+    padding: 2rem;
+}
+
+.card {
+    align-items: center !important;
+    margin-block: 1rem;
+}
+#card{
+
+    background-image:url(../media/boleta1.png);
+    background-size: cover;
+}
+#card15{
+
+    background-image:url(../media/boletas2.png);
+    background-size: cover;
+}
+#card18{
+
+    background-image:url(../media/boletas3.png);
+    background-size: cover;
+}
+#card21{
+
+    background-image:url(../media/boletas4.png);
+    background-size:cover;
+}
+
+.card .card-title {
+    font-style: italic;
+    font-size: 250% !important;
+    text-align: center;
+    color: white;
+}
+
+.card .card-body {
+    background-color:transparent;
+    
+}
+ 
+.card .card-body-over {
+    background-color: #ff1778;
+    background-blend-mode:multiply;
+   
+    padding: 1rem;
+
+}
+
+.card .card-body-clic {
+    background-color: blueviolet;
+    padding: 1rem;
+}
+ 
+
+@media (min-width: 992px) {
+    .variables {
+        background-color: black;
+        color: white;
+        background-image: url(../media/voto-back.png);
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
