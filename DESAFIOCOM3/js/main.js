@@ -516,13 +516,22 @@ $('#resetear').on('click', () => {
     window.location.reload();
 }
 )
-
+//ANIMACIONES
 $('body').prepend('<section class="precalc"><div class="inPrecalc"><p><h2><b>Cuando decides no participar el día de las elecciones, el voto nos sale más caro a todas y todos los mexicanos...</b></p><p>Ingresa a esta calculadora y conoce cuánto nos ha costado cada voto en México.</h2></p><p><buton class="btn btn-primary" id="Ingresar">Ir a la calculadora</button></p></div></section>')
 $('.precalc').fadeIn();
 $('.calc').hide();
 
-$('#Ingresar').on('click', () => {
-    $('.precalc').fadeOut();
-    $('.calc').fadeIn();
-})
+$('#Ingresar').on('click',() => {
+    $('.precalc').fadeOut('slow', () => {
+        $('.calc').fadeIn('slow')
+    })
+}
+)
+
+$('#calculo-personalizado').hide();
+$('#hacer-calculo').on('click', () =>
+$('#calculo-personalizado').slideToggle()
+)
+
+
 

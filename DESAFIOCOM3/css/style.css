@@ -52,7 +52,9 @@ align-items: center;
 
     color: white;
 }
-
+.footer{
+    margin-top: 5%!important;
+}
 
 .row {
     justify-content:center !important;
