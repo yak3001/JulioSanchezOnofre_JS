@@ -375,19 +375,19 @@ function menos() {
 
     if ($('#input-fecha').val() == procesosElectorales[0]) {
         calculo.value = (procesoElectoral2012.presupuestoElecciones() / ((currentVal * listaNominal[0].value) / 100)).toFixed(2);
-        $('#participacion').replaceWith(`<div id="participacion">Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${$('#input-fecha').val()}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b></div>`);
+        $('#participacion').replaceWith(`<div id="participacion"><br>Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${$('#input-fecha').val()}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b></div>`);
     }
     else if ($('#input-fecha').val() == procesosElectorales[1]) {
         calculo.value = (procesoElectoral2015.presupuestoElecciones() / ((currentVal * listaNominal[1].value) / 100)).toFixed(2);
-        $('#participacion').replaceWith(`<div id="participacion">Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${$('#input-fecha').val()}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b></div>`);
+        $('#participacion').replaceWith(`<div id="participacion"><br>Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${$('#input-fecha').val()}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b></div>`);
     }
     else if ($('#input-fecha').val() == procesosElectorales[2]) {
         calculo.value = (procesoElectoral2018.presupuestoElecciones() / ((currentVal * listaNominal[2].value) / 100)).toFixed(2);
-        $('#participacion').replaceWith(`<div id="participacion">Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${$('#input-fecha').val()}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b></div>`);
+        $('#participacion').replaceWith(`<div id="participacion"><br>Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${$('#input-fecha').val()}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b></div>`);
     }
     else if ($('#input-fecha').val() == procesosElectorales[3]) {
         calculo.value = (procesoElectoral2021.presupuestoElecciones() / ((currentVal * listaNominal[3].value) / 100)).toFixed(2);
-        $('#participacion').replaceWith(`<div id="participacion">Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${$('#input-fecha').val()}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b></div>`);
+        $('#participacion').replaceWith(`<div id="participacion"><br>Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${$('#input-fecha').val()}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b></div>`);
     }
     else {
         alert(`No seleccionaste una opción válida.\n\nOpciones disponibles: ${procesosElectorales.join("-")}`);
@@ -403,19 +403,19 @@ function mas() {
 
     if ($('#input-fecha').val() == procesosElectorales[0]) {
         calculo.value = (procesoElectoral2012.presupuestoElecciones() / ((currentVal * listaNominal[0].value) / 100)).toFixed(2);
-        $('#participacion').replaceWith(`<div id="participacion">Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${$('#input-fecha').val()}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b></div>`);
+        $('#participacion').replaceWith(`<div id="participacion"><br>Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${$('#input-fecha').val()}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b></div>`);
     }
     else if ($('#input-fecha').val() == procesosElectorales[1]) {
         calculo.value = (procesoElectoral2015.presupuestoElecciones() / ((currentVal * listaNominal[1].value) / 100)).toFixed(2);
-        $('#participacion').replaceWith(`<div id="participacion">Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${$('#input-fecha').val()}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b></div>`);
+        $('#participacion').replaceWith(`<div id="participacion"><br>Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${$('#input-fecha').val()}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b></div>`);
     }
     else if ($('#input-fecha').val() == procesosElectorales[2]) {
         calculo.value = (procesoElectoral2018.presupuestoElecciones() / ((currentVal * listaNominal[2].value) / 100)).toFixed(2);
-        $('#participacion').replaceWith(`<div id="participacion">Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${$('#input-fecha').val()}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b></div>`);
+        $('#participacion').replaceWith(`<div id="participacion"><br>Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${$('#input-fecha').val()}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b></div>`);
     }
     else if ($('#input-fecha').val() == procesosElectorales[3]) {
         calculo.value = (procesoElectoral2021.presupuestoElecciones() / ((currentVal * listaNominal[3].value) / 100)).toFixed(2);
-        $('#participacion').replaceWith(`<div id="participacion">Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${$('#input-fecha').val()}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b></div>`);
+        $('#participacion').replaceWith(`<div id="participacion"><br>Con una participación de <b>${currentVal}%</b> en las elecciones de <b>${$('#input-fecha').val()}</b>, el costo de cada voto habría sido de <b>$${calculo.value} </b></div>`);
     }
     else {
         alert(`No seleccionaste una opción válida.\n\nOpciones disponibles: ${procesosElectorales.join("-")}`);
@@ -473,15 +473,15 @@ const create = (calculoPersonal) => {
 
 //FUNCION BORRAR ELEMENTO DEL STORAGE
 function borrarStorage() {
-    if (sessionStorage.getItem('inputProcesoElectoralPersonal') != null)
+    if (sessionStorage.getItem('inputProcesoElectoralPersonal') != null){
         sessionStorage.removeItem('inputProcesoElectoralPersonal');
+    }
 }
 
 // //ESCUCHANDO EVENTO DEL FORMULARIO-JQUERY
 
 $('#submit').on('click', (event) => {
     event.preventDefault()
-
     const outputCalculoPersonal = new ProcesoElectoralPersonal(
         inputPersonalPrevio, inputPersonalActual, inputPersonalPartidos, inputPersonalVotos, inputPersonalLista
     )
@@ -503,19 +503,20 @@ $('#submit').on('click', (event) => {
 
     let procesoPersonal = JSON.parse(sessionStorage.getItem('inputProcesoElectoralPersonal'));
 
-    $('#calculo').append(`<div id="valor-calculo"><h3>Cálculo Personalizado</h3><p>Con una participación ciudadana de <b>${participacionPersonal()}%</b> y un presupuesto total de <b>${new Intl.NumberFormat().format(presupuestoEleccionesPersonal())} pesos</b>, el costo de cada voto sería de <b>${new Intl.NumberFormat().format(costoVotoPersonal())} pesos</b></p>
-    <br><img src="./media/voto-back.png" alt="voto" id="img-calculo"></p><br><button class="btn btn-secondary" id="reset" data-bs-dismiss="offcanvas">Cerrar</button></div>`);
-}
-)
+$('#calculo').append(`<div id="valor-calculo"><h3>Cálculo Personalizado</h3><p>Con una participación ciudadana de <b>${participacionPersonal()}%</b> y un presupuesto total de <b>${new Intl.NumberFormat().format(presupuestoEleccionesPersonal())} pesos</b>, el costo de cada voto sería de <b>${new Intl.NumberFormat().format(costoVotoPersonal())} pesos</b></p>
+    <br><img src="./media/voto-back.png" alt="voto" id="img-calculo"></p><br><button class="btn btn-secondary" id="resetear" data-bs-dismiss="offcanvas">Reiniciar</button></div>`);
+
+})
+
 
 $('#calculo').on('hidden.bs.offcanvas', () => {
     limpiarCalculo();
 })
 
 $('#resetear').on('click', () => {
+    borrarStorage();
     window.location.reload();
-    borrarStorage(); 
-}
+    }  
 )
 //ANIMACIONES
 $('body').prepend('<section class="precalc"><div class="inPrecalc"><p><h2><b>Cuando decides no participar el día de las elecciones, el voto nos sale más caro a todas y todos los mexicanos...</b></p><p>Ingresa a esta calculadora y conoce cuánto nos ha costado cada voto en México.</h2></p><p><buton class="btn btn-primary" id="Ingresar">Ir a la calculadora</button></p></div></section>')

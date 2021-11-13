@@ -105,11 +105,23 @@
 
                 <div>
                     Participación:
-                    <input type="range" id="barra" min="10" max="100" value="50">
-                    <button onclick="menos()">-</button>
-                    <button onclick="mas()">+</button>
+                    <button class="btn btn-danger btn-sm" onclick="menos()">Disminuye</button>
+                    <button class="btn btn-success btn-sm" onclick="mas()">Aumenta</button>
+                    <input type="range" list="valores" id="barra" min="10" max="100" value="50">
+                    <datalist id="valores">
+                        <option value="10" label="10%">
+                        <option value="20">
+                        </form>
+                        <option value="30">
+                        <option value="40">
+                        <option value="50" label="50%">
+                        <option value="60">
+                        <option value="70">
+                        <option value="80">
+                        <option value="90">
+                        <option value="100" label="100%">
+                      </datalist>
                 </div>
-                </form>
 
                 <div id="participacion"> </div>
             </div>
@@ -118,7 +130,7 @@
         <section class="container">
 
             <div class="container mt-3">
-                <button type="button" class="btn btn-danger" id="hacer-calculo">
+                <button type="button" class="btn btn-primary dropdown-toggle" id="hacer-calculo">
                     <h3><b>¡Haz tu propio cálculo!</b></h3>
                 </button>
                 <form class="was-validated" id="calculo-personalizado">
@@ -167,8 +179,7 @@
                         <div class="invalid-feedback">Ingresa una cifra válida</div>
                     </div>
                     <button type="submit" id="submit" class="btn btn-primary" data-bs-toggle="offcanvas"
-                        data-bs-target="#calculo">Calcular</button>
-                    <button id="resetear" class="btn btn-primary">Reiniciar</button>
+                        data-bs-target="#calculo">Conoce el resultado</button>
                 </form>
             </div>
         </section>
@@ -180,6 +191,6 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="js/main.js"></script>
+<script typoe="module"src="js/main.js"></script>
 
 </html>
