@@ -365,7 +365,7 @@ $('#boton-variables').on('click', (event) => {
     else {
         $('#calculo').append(`<div id="valor-calculo">No seleccionaste una opción válida.<br>Las opciones disponibles son: <b>${procesosElectorales.join("-")}</b><br><img src="./media/voto-back.png" alt="voto" id="img-calculo"></p><br><button class="btn btn-secondary" data-bs-dismiss="offcanvas" type="button">Cerrar</button></div>`);
     }
-})
+})  
 
 //CALCULADORA DEL VOTO RESPECTO A LA PARTICIPACIÓN-JQUERY
 
@@ -534,6 +534,5 @@ $('#calculo-personalizado').hide();
 $('#hacer-calculo').on('click', () =>
 $('#calculo-personalizado').slideToggle()
 )
-
 
 
