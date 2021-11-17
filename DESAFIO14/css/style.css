@@ -1,0 +1,138 @@
+body {
+    background-color: black !important;
+    background-image: url(../media/votobg.png);
+    background-blend-mode:screen;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+h1 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 250% !important;
+}
+h2, h3, div {
+    font-family: 'Poppins';
+    color:#e5c2dc;
+}
+
+h3 {
+    font-size: 150% !important;
+}
+form {
+    color:#e5c2dc;
+}
+
+.precalc {
+display: none;
+}
+
+.inPrecalc{
+padding: 20%;
+}
+
+.calc {
+    display: block;
+}
+
+.header, .footer {
+    color: black;
+    background-color: #ff01b2;
+    text-align: center;
+}
+.explainer {
+    background-color: #880750;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+}
+.variables {
+
+    color: white;
+}
+.footer{
+    margin-top: 5%!important;
+}
+
+.row {
+    justify-content:center !important;
+} 
+
+
+.form-label {
+    font-style:italic; 
+}
+
+.offcanvas {
+    background-color: black !important;
+    overflow-y: scroll;
+    padding: 2rem;
+}
+
+.card {
+    align-items: center !important;
+    margin-block: 1rem;
+}
+#card{
+
+    background-image:url(../media/boleta1.png);
+    background-size: cover;
+}
+#card15{
+
+    background-image:url(../media/boletas2.png);
+    background-size: cover;
+}
+#card18{
+
+    background-image:url(../media/boletas3.png);
+    background-size: cover;
+}
+#card21{
+
+    background-image:url(../media/boletas4.png);
+    background-size:cover;
+}
+
+.card .card-title {
+    font-style: italic;
+    font-size: 250% !important;
+    text-align: center;
+    color: white;
+}
+
+.card .card-body {
+    background-color:transparent;
+    
+}
+ 
+.card .card-body-over {
+    background-color: #ff1778;
+    background-blend-mode:multiply;
+   
+    padding: 1rem;
+
+}
+
+.card .card-body-clic {
+    background-color: blueviolet;
+    padding: 1rem;
+}
+#img-calculo {
+    width: 100%;
+    object-fit:contain;
+
+}
+
+
+@media (min-width: 992px) {
+    .variables {
+
+        color: white;
+        background-image: url(../media/voto-back.png);
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
