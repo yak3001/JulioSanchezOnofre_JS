@@ -367,6 +367,7 @@ $('#boton-variables').on('click', (event) => {
     }
 })  
 
+
 //CALCULADORA DEL VOTO RESPECTO A LA PARTICIPACIÓN-JQUERY
 
 function menos() {
