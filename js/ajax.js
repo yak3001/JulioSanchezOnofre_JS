@@ -13,7 +13,7 @@ $('#boton-logistica').click((event) => {
 
         $('#calculo').append(`
             <div id="valor-calculo">
-            <h3><b>Proceso Electoral ${response[0].proceso}</b></h3>
+            <h3><b>Magnitud del Proceso Electoral ${response[0].proceso}</b></h3>
             <ul>
                 <li><b>Cargos electos: </b>${response[0].cargos}</li>
                 <li><b>Casillas instaladas: </b>${response[0].casillas}</li>
@@ -31,7 +31,7 @@ $('#boton-logistica').click((event) => {
 
         $('#calculo').append(`
             <div id="valor-calculo">
-            <h3><b>Proceso Electoral ${response[1].proceso}</b></h3>
+            <h3><b>Magnitud del Proceso Electoral ${response[1].proceso}</b></h3>
             <ul>
                 <li><b>Cargos electos: </b>${response[1].cargos}</li>
                 <li><b>Casillas instaladas: </b>${response[1].casillas}</li>
@@ -50,7 +50,7 @@ $('#boton-logistica').click((event) => {
 
         $('#calculo').append(`
             <div id="valor-calculo">
-            <h3><b>Proceso Electoral ${response[2].proceso}</b></h3>
+            <h3><b>Magnitud del Proceso Electoral ${response[2].proceso}</b></h3>
             <ul>
                 <li><b>Cargos electos: </b>${response[2].cargos}</li>
                 <li><b>Casillas instaladas: </b>${response[2].casillas}</li>
@@ -69,7 +69,7 @@ $('#boton-logistica').click((event) => {
 
         $('#calculo').append(`
             <div id="valor-calculo">
-            <h3><b>Proceso Electoral ${response[3].proceso}</b></h3>
+            <h3><b>Magnitud del Proceso Electoral ${response[3].proceso}</b></h3>
             <ul>
                 <li><b>Cargos electos: </b>${response[3].cargos}</li>
                 <li><b>Casillas instaladas: </b>${response[3].casillas}</li>
