@@ -313,16 +313,16 @@ $('#boton-variables').on('click', (event) => {
     event.preventDefault();
 
     if ($('#input-fecha').val() == procesosElectorales[0]) {
-        $('#calculo').append(`<div class="offcanvas-title" id="valor-calculo"><h3>Variables ${procesosElectorales[0] - 1}-${procesosElectorales[0]}</h3><p><ul><li>Presupuesto del ${procesosElectorales[0] - 1} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoPrevio[0].value)}</b></li>
-        <li>Presupuesto del ${procesosElectorales[0]} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoActual[0].value)}</b></li>
+        $('#calculo').append(`<div class="offcanvas-title" id="valor-calculo"><h3>Variables ${procesosElectorales[0] - 1}-${procesosElectorales[0]}</h3><p><ul><li>Presupuesto del ${procesosElectorales[0] - 1} para elecciones federales= <b>$${new Intl.NumberFormat().format(presupuestoPrevio[0].value)}</b></li>
+        <li>Presupuesto del ${procesosElectorales[0]} para elecciones federales= <b>$${new Intl.NumberFormat().format(presupuestoActual[0].value)}</b></li>
         <li>Presupuesto ${procesosElectorales[0]} para Partidos Políticos = <b>$${new Intl.NumberFormat().format(presupuestoPartidos[0].value)}</b></li>
         <li>Votos emitidos en ${procesosElectorales[0]} = <b>${new Intl.NumberFormat().format(votos[0].value)}</b></li>
         <li>Lista Nominal de electores en ${procesosElectorales[0]} = <b>${new Intl.NumberFormat().format(listaNominal[0].value)}</b></li></ul><img src="./media/voto-back.png" alt="voto" id="img-calculo"></p><br><button class="btn btn-secondary" data-bs-dismiss="offcanvas" type="button" >Cerrar</button></div>`);
 
     }
     else if ($('#input-fecha').val() == procesosElectorales[1]) {
-        $('#calculo').append(`<div id="valor-calculo"><h3>Variables ${procesosElectorales[1] - 1}-${procesosElectorales[1]}</h3><ul><li>Presupuesto del ${procesosElectorales[1] - 1} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoPrevio[1].value)}</b></li>
-        <li>Presupuesto del ${procesosElectorales[1]} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoActual[1].value)}</b></li>
+        $('#calculo').append(`<div id="valor-calculo"><h3>Variables ${procesosElectorales[1] - 1}-${procesosElectorales[1]}</h3><ul><li>Presupuesto del ${procesosElectorales[1] - 1} para elecciones federales= <b>$${new Intl.NumberFormat().format(presupuestoPrevio[1].value)}</b></li>
+        <li>Presupuesto del ${procesosElectorales[1]} para elecciones federales= <b>$${new Intl.NumberFormat().format(presupuestoActual[1].value)}</b></li>
         <li>Presupuesto ${procesosElectorales[1]} para Partidos Políticos = <b>$${new Intl.NumberFormat().format(presupuestoPartidos[1].value)}</b></li>
         <li>Votos emitidos en ${procesosElectorales[1]} = <b>${new Intl.NumberFormat().format(votos[1].value)}</b></li>
         <li>Lista Nominal de electores en ${procesosElectorales[1]} = <b>${new Intl.NumberFormat().format(listaNominal[1].value)}</b></li></ul>
@@ -330,8 +330,8 @@ $('#boton-variables').on('click', (event) => {
 
     }
     else if ($('#input-fecha').val() == procesosElectorales[2]) {
-        $('#calculo').append(`<div id="valor-calculo"><h3>Variables ${procesosElectorales[2] - 1}-${procesosElectorales[2]}</h3><ul><li>Presupuesto del ${procesosElectorales[2] - 1} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoPrevio[2].value)}</b></li>
-        <li>Presupuesto del ${procesosElectorales[2]} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoActual[2].value)}</b></li>
+        $('#calculo').append(`<div id="valor-calculo"><h3>Variables ${procesosElectorales[2] - 1}-${procesosElectorales[2]}</h3><ul><li>Presupuesto del ${procesosElectorales[2] - 1} para elecciones federales= <b>$${new Intl.NumberFormat().format(presupuestoPrevio[2].value)}</b></li>
+        <li>Presupuesto del ${procesosElectorales[2]} para elecciones federales= <b>$${new Intl.NumberFormat().format(presupuestoActual[2].value)}</b></li>
         <li>Presupuesto ${procesosElectorales[2]} para Partidos Políticos = <b>$${new Intl.NumberFormat().format(presupuestoPartidos[2].value)}</b></li>
         <li>Votos emitidos en ${procesosElectorales[2]} = <b>${new Intl.NumberFormat().format(votos[2].value)}</b></li>
         <li>Lista Nominal de electores en ${procesosElectorales[2]} = <b>${new Intl.NumberFormat().format(listaNominal[2].value)}</b></li></ul>
@@ -339,8 +339,8 @@ $('#boton-variables').on('click', (event) => {
 
     }
     else if ($('#input-fecha').val() == procesosElectorales[3]) {
-        $('#calculo').append(`<div id="valor-calculo"><h3>Variables ${procesosElectorales[3] - 1}-${procesosElectorales[3]}</h3><ul><li>Presupuesto del ${procesosElectorales[3] - 1} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoPrevio[3].value)}</b></li>
-        <li>Presupuesto del ${procesosElectorales[3]} para elecciones = <b>$${new Intl.NumberFormat().format(presupuestoActual[3].value)}</b></li>
+        $('#calculo').append(`<div id="valor-calculo"><h3>Variables ${procesosElectorales[3] - 1}-${procesosElectorales[3]}</h3><ul><li>Presupuesto del ${procesosElectorales[3] - 1} para elecciones federales= <b>$${new Intl.NumberFormat().format(presupuestoPrevio[3].value)}</b></li>
+        <li>Presupuesto del ${procesosElectorales[3]} para elecciones federales= <b>$${new Intl.NumberFormat().format(presupuestoActual[3].value)}</b></li>
         <li>Presupuesto ${procesosElectorales[3]} para Partidos Políticos = <b>$${new Intl.NumberFormat().format(presupuestoPartidos[3].value)}</b></li>
         <li>Votos emitidos en ${procesosElectorales[3]} = <b>${new Intl.NumberFormat().format(votos[3].value)}</b></li>
         <li>Lista Nominal de electores en ${procesosElectorales[3]} = <b>${new Intl.NumberFormat().format(listaNominal[3].value)}</b></li></ul>
