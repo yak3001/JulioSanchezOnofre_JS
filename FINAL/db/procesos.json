@@ -1,0 +1,46 @@
+[
+    {
+      "id": 0,
+      "proceso": "2011-2012",
+      "casillas": "143,149",
+      "boletas": "248,036,580",
+      "capacitadores": "29,487",
+      "supervisores": "4,837",
+      "spots": "133,095",
+      "cargos": "2,127 ",
+      "funcionarios": "1,002,043"
+    },
+    {
+      "id": 1,
+      "proceso": "2014-2015",
+      "casillas": "148,848",
+      "boletas": "87,623,704",
+      "capacitadores": "33,184",
+      "supervisores": "5,601",
+      "spots": "40,993,632",
+      "cargos": "2,179",
+      "funcionarios": "1,209,847"
+    },
+    {
+      "id": 2,
+      "proceso": "2017-2018",
+      "casillas": "156,792",
+      "boletas": "281,702,835",
+      "capacitadores": "38,766",
+      "supervisores": "6,277",
+      "spots": "59,731,200",
+      "cargos": "18,299",
+      "funcionarios": "1,002,043"
+    },
+    {
+      "id": 3,
+      "proceso": "2020-2021",
+      "casillas": "162,538",
+      "boletas": "101,611,121 ",
+      "capacitadores": "41,088",
+      "supervisores": "6,994",
+      "spots": "53,027,328",
+      "cargos": "20,415",
+      "funcionarios": "1,464,714 "
+    }
+]
